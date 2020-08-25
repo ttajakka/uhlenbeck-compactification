@@ -1,0 +1,149 @@
+\documentclass[letterpaper,10pt]{article}
+
+\setlength{\evensidemargin}{-0.0in}
+\setlength{\oddsidemargin}{-0.0in}
+\setlength{\textwidth}{6.4in}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{mathpazo}
+\usepackage{relsize}
+\usepackage{mathtools}
+\usepackage{mathrsfs}
+\usepackage{verbatim}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
+
+\usepackage{tikz}
+\usetikzlibrary{matrix,arrows}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{Moduli of higher rank PT stable pairs}
+\rhead{Tuomas Tajakka}
+%\cfoot{}
+\rfoot{}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\usepackage{amsthm}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{expl}[thm]{Example}
+\newtheorem{defn}[thm]{Definition}
+
+\theoremstyle{remark}
+\newtheorem{rmk}[thm]{Remark}
+\newtheorem{exer}[thm]{Exercise}
+
+\title{Proper and projective moduli spaces of higher rank PT stable pairs}
+\author{Tuomas Tajakka}
+\date{}
+
+\usepackage{commands}
+
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+\section{PT-semistable objects}
+Let $X$ be a smooth, projective threefold with very ample line bundle $\Oh_X(1)$. A \textbf{PT-semistable object} is a complex $E \in D^b(X)$ satisfying the following conditions.
+\begin{enumerate}[(i)]
+    \item $\sH^0(E)$ is torsion-free and $\mu$-semistable,
+    \item $\sH^1(E)$ is 0-dimensional,
+    \item $\Hom_{D^b(X)}(T[-1], E) = 0$ for any 0-dimensional sheaf $T$,
+    \item $\sH^i(E) = 0$ for $i \neq 0, 1$.
+\end{enumerate}
+The stack of PT-semistable objects of a fixed numerical class $v \in \Kn(X)$ is a universally closed algebraic stack of finite type by the work of Jason Lo. The goal of this note is to construct a globally generated line bundle on this stack.
+
+Setting $F = \sH^0(E)$ and $T = \sH^1(E)$, we see that $E$ fits in an exact triangle
+\[ F \to E \to T[-1]. \]
+Since $F$ is torsion-free, it embeds into its double dual $F^{\vee\vee}$ and the quotient $Q \coloneqq F^{\vee\vee}/F$ is 1-dimensional. We first claim that $Q$ is pure 1-dimensional. If not, let $Q_0 \subs Q$ denote the maximal 0-dimensional subsheaf. We have an exact triangle
+\[ Q[-1] \to F \to F^{\vee\vee} \]
+where $Q[-1] \to F$ is a nonzero map. Thus, we get a nonzero map
+\[ Q_0[-1] \to Q[-1] \to F \to E \]
+as a sequence of inclusions in the heart of a bounded t-structure of perverse sheaves. But this is impossible since $\Hom_{D^b(X)}(Q_0[-1], E) = 0$ by assumption.
+
+Let now $H \subs X$ be a smooth surface corresponding to a section $s \in H^0(X, \Oh_X(a))$ for some $a \in \N$, and let $i: H \to X$ denote the inclusion. Denote by $i^*: \Coh(X) \to \Coh(H)$ and $Li^*: D^b(X) \to D^b(H)$ the ordinary and derived restriction respectively. Since $i_*: \Coh(H) \to \Coh(X)$ is exact, we denote the corresponding functor $D^b(H) \to D^b(X)$ by the same symbol.
+
+\begin{lem}
+Assume that $H$ does not contain any of the components of the support of $Q$. The derived restriction $L i^* E$ satisfies:
+\begin{enumerate}[(i')]
+    \item $\sH^0(L i^* E)$ is torsion-free,
+    \item $\sH^1(L i^* E)$ is zero-dimensional,
+    \item $\sH^i(L i^* E) = 0$ for $i \neq 0, 1$. 
+\end{enumerate}
+\end{lem}
+\begin{proof}
+First of all, we claim that the derived restriction of $F$ to $H$ is actually a torsion-free sheaf. The restriction $Li^* Q$ is the cone of the morphism $Q \otimes \Oh_X(-a) \xrightarrow{s} Q$, and since $s$ acts as a nonzero divisor on $Q$, we see that $L i^* Q = i^* Q$ is a 0-dimensional sheaf. Moreover, since $F^{\vee\vee}$ is reflexive, the restriction $L i^* F^{\vee\vee} = i^* F^{\vee\vee}$ is a torsion-free sheaf by \cite[Corollary 1.1.14]{HL}. Now from the short exact sequence
+\[ 0 \to F \to F^{\vee\vee} \to Q \to 0 \]
+we obtain an exact triangle
+\[ L i^* F \to i^* F^{\vee\vee} \to i^*Q. \]
+Since $\sH^{-1}(i^* Q) = 0$, we see that $L i^* F = i^* F$ is a subsheaf of $i^* F^{\vee\vee}$, hence torsion-free.
+
+Now consider the exact triangle
+\[ F \to E \to T[-1] \]
+as above. This yields an exact triangle
+\[ i^*F \to L i^* E \to L i^* T[-1] \]
+in $D^b(H)$. The object $L i^* T[-1]$ fits in an exact triangle
+\[ T' \to L i^* T \to T''[-1], \]
+where $T'$ and $T''$ are 0-dimensional sheaves on $H$. Thus, the long exact sequence of cohomology sheaves reads
+\[ 0 \to i^* F \to \sH^0(L i^* E) \to T' \to 0 \to \sH^1(Li^* E) \to T'' \to 0. \]
+From this we see that first of all $\sH^1(Li^* E) \cong T''$ is 0-dimensional. Second, we see that the associated points of $\sH^0(L i^* E)$ are contained in the associated points of $i^* F$ and $T'$, meaning that they are either the generic point of $H$ or closed points. If a closed point $p \in H$ is an associated point, then there is a nonzero map $\Oh_p \to \sH^0(L i^* E)$, and so a nonzero map $\Oh_p \to L i^* E$, and so $\Hom_{D^b(H)}(\Oh_p, L i^* E) \neq 0$. But this is impossible for the following reason.
+
+Since $H$ and $X$ are smooth, they have dualizing line bundles $\om_H$ and $\om_X$ respectively. Moreover, the pushforward $i_*: D^b(H) \to D^b(X)$ is a right adjoint to $L i^*$. Thus, we have
+\begin{align*}
+    \Hom_{D^b(H)}(\Oh_p, L i^* E) & \cong \Hom_{D^b(H)}(L i^* E, \Oh_p \otimes \om_H[2])^\vee \\
+    & \cong \Hom_{D^b(H)}(L i^* E, \Oh_p[2])^\vee \\
+    & \cong \Hom_{D^b(X)}(E, i_*\Oh_p[2])^\vee \\
+    & \cong \Hom_{D^b(X)}(\Oh_p[2], E \otimes \om_X[3]) \\
+    & \cong \Hom_{D^b(X)}(\Oh_p \otimes \om_X^\vee[-1], E) \\
+    & \cong \Hom_{D^b(X)}(\Oh_p[-1], E).
+\end{align*}
+By assumption on $E$ we have $\Hom_{D^b(X)}(\Oh_p[-1], E) = 0$. Thus, $p$ cannot be an associated point of $\sH^0(L i^* E)$, and so $\sH^0(L i^* E)$ is torsion-free as claimed.
+\end{proof}
+
+Let now $C \subs X$ be a smooth, connected curve that is the intersection of $H$ with another smooth surface $H' \in |\Oh_X(a)|$. Since we obtain the derived restriction $E|^\LL_C$ by first restricting to $H$, it follows from the previous lemma and \cite[Lemma 6.3]{t} that the $E|^\LL_C$ fits in a triangle
+\[ \sH^0(E|^\LL_C) \to E|^\LL_C \to \sH^1(E|^\LL_C), \]
+where $\sH^1(E|^\LL_C)$ is a torsion sheaf.
+
+\section{Moduli stacks}
+
+\section{Construction of good moduli spaces}
+
+\section{Semiample determinantal line bundle}
+
+\section{TODO}
+\begin{itemize}
+    \item For large enough $a$, the curve $C = H \cap H'$ cannot contain components of $Q = F^{\vee\vee}/F$. This should follow from the fact that the family of PT-semistable objects is bounded, and hence so are the degrees of the possible $Q$.
+    \item Some appropriate power of the line bundle $\la_{\sE}(u_2(v))$ is obtained by restricting the universal family $\sE$ to $C$ and doing the determinantal thing. Write this down, and find the correct power.
+    \item $\la_{\sE}(u_2(v))$ is semiample because for a given $E$, we can choose $C$ so that $E|^\LL_C = F|_C$ is a semistable vector bundle. This gives a map to a projective space.
+    \item The map to $\p^N$ cannot contract curves at least along the locus of stable vector bundles. This follows from the Second Main Lemma of \cite{seshadri}, and an argument similar to \cite[Lemma 8.2.12]{HL}.
+\end{itemize}
+
+\section{Questions}
+\begin{itemize}
+    \item Does the stack have a good moduli space? How does this fit in the "moduli of objects in an abelian category" business? And while at it, why does the stack of $\mu$-semistable sheaves not have a good moduli space but the Bridgeland stack does?
+    \item Does $\la_{\sE}(u_2(v))$ descend to said good moduli space?
+    \item $\la_{\sE}(u_2(v))$ doesn't contract curves along the $\mu$-stable locus, but does it actually separate points? What does it contract outside the $\mu$-stable locus?
+    \item Do the images in $\p^N$ stabilize for increasingly large powers of $\la_{\sE}(u_2(v))$?
+\end{itemize}
+
+\bibliographystyle{siam}
+\addcontentsline{toc}{section}{References}
+\bibliography{bibliography}
+
+\end{document}

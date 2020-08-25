@@ -1,0 +1,67 @@
+\documentclass[8pt]{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+%\usepackage{mathpazo}
+\usepackage{relsize}
+\usepackage{mathtools}
+\usepackage{verbatim}
+
+\usepackage{tikz}
+\usetikzlibrary{matrix,arrows}
+
+\usepackage{commands}
+
+\setbeamertemplate{navigation symbols}{}%remove navigation symbols
+\setbeamertemplate{frametitle}[default][center]
+
+\begin{document}
+
+\begin{frame}{Uhlenbeck Compactification as a Bridgeland Moduli Space}
+    
+\begin{center}
+{\large Tuomas Tajakka} \\
+University of Washington
+\end{center}
+
+\begin{columns}[T]
+    
+    \column{0.5\textwidth}
+    \begin{itemize}
+        \item<2-> $X$ smooth, proj. surface $/\C$
+        \item<3-> The {\bf \color{blue} slope} of $E \in \Coh(X)$ is
+        \[ \mu(E) \coloneqq \deg(c_1(E))/\rk(E) \]
+        \item<4-> $E$ is {\color{blue} $\mu-${\bf stable}} if for all $F \subset E$
+        \[ \mu(F) < \mu(E) \]
+        \item<5-> $E$ is {\color{blue} $\mu$-{\bf polystable}} if $E = \oplus_i E_i$ for some stable $E_i$'s of same $\mu$
+        \item<6-> Futile dream: moduli space of $\mu$-polystable sheaves
+        \item<7-> {\bf Theorem} (J. Li): $\exists$ proj. scheme $M^{\mathrm{Uhl}}$ parameterizing $\mu$-polystable sheaves up to:
+        \begin{itemize}
+            \item<8-> \color{violet}isomorphic $E^{\vee\vee}$ 
+            \item<9-> \color{violet} equal $\Supp(E^{\vee\vee}/E)$ in $\Sym(X)$
+        \end{itemize}
+    \end{itemize}
+    
+    \column{0.5\textwidth}
+    \begin{itemize}
+        \item<10-> {\color{blue} \bf Bridgeland stability condition:} $\si = (\sA, Z)$, $\sA \subs D^b(X)$ heart, $Z: \Kn(X) \to \C$ linear map
+        \item<11-> $E \in \sA$ is {\color{blue} $\si$-{\bf stable}} if for all $F \subs E$
+        \[ \arg(Z(F)) < \arg(Z(E)) \]
+        \item<12-> There exists $\si_0$ such that $\si_0$-polystable objects are of the form:
+        \[ \color{violet} F \oplus \left(\oplus_j \Oh_{p_j}[-1]\right) \]
+        where $F$ is a $\mu$-polystable \emph{vector bundle}, $\Oh_{p_j}$ are skyscraper sheaves 
+        \item<13-> {\bf Theorem} (A-HL-H): $\exists$ proper alg. space $M^{\si_0}$ parameterizing $\si_0$-polystable objects
+        \item<14-> {\bf Theorem} (T):
+        \begin{enumerate}
+            \item<15-> $M^{\si_0}$ is projective
+            \item<16-> $\exists$ bijective morphism $M^{\mathrm{Uhl}} \to M^{\si_0}$
+        \end{enumerate} 
+    \end{itemize}
+    
+\end{columns}
+    
+\end{frame}
+
+\end{document}
