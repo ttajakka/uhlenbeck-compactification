@@ -1,0 +1,78 @@
+\documentclass[letterpaper,10pt]{article}
+
+\setlength{\evensidemargin}{-0.0in}
+\setlength{\oddsidemargin}{-0.0in}
+\setlength{\textwidth}{6.4in}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{mathpazo}
+\usepackage{relsize}
+\usepackage{mathtools}
+\usepackage{mathrsfs}
+\usepackage{verbatim}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
+
+\usepackage{tikz}
+\usetikzlibrary{matrix,arrows}
+
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
+%\lhead{}
+%\rhead{}
+%\cfoot{}
+%\rfoot{}
+%\renewcommand{\headrulewidth}{0.4pt}
+
+\usepackage{amsthm}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{expl}[thm]{Example}
+\newtheorem{defn}[thm]{Definition}
+
+\theoremstyle{remark}
+\newtheorem{rmk}[thm]{Remark}
+\newtheorem{exer}[thm]{Exercise}
+
+\title{Questions for Wanmin}
+\author{from Tuomas}
+\date{}
+
+\usepackage{commands}
+
+
+\begin{document}
+
+\maketitle
+
+\noindent I have a couple of questions about your thesis. I will be referring to this document:\\ \url{https://wanminliu.github.io/doc/thesis_WM.pdf}
+\begin{itemize}
+    \item On page 5, you define the classes $\mathbf{w}(\ch), \mathbf{m}(L, \ch)$, and $\mathbf{u}(\ch)$. Then in the definition of $
+    \sB_\al$, as well as in the statement of Theorem 1.3.1 (a), you seem to use the formula
+    \[ \mathbf{m}(\be, \ch) + \mathbf{w}(\ch) = \mathbf{m}(\al, \ch) + \mathbf{u}(\ch). \]
+    I tried to verify this, and what seems to be needed is 
+    \[ \mathbf{m}(\be - \frac{1}{2} K_S, \ch) + \mathbf{m}(\frac{1}{2} K_S, \ch) = \mathbf{m}(\be, \ch) \] 
+    This would follow if $\mathbf{m}(L, \ch)$ is linear in $L$. I don't immediately see why this is true: since
+    \[ \mathbf{m}(L, \ch) = \left(0, L, \left(\frac{\ch_1}{\ch_0} - \frac{3}{4} K_S\right)\cdot H \right), \]
+    it doesn't seem to be true that $\mathbf{m}(L_1, \ch) + \mathbf{m}(L_2, \ch) = \mathbf{m}(L_1 + L_2, \ch)$. Am I misunderstanding the additive structure of these classes, or is there some other reason the formula is true?
+    
+    \item Near the bottom of page 39, you say that if $\partial M_{(\al, \om)}(\ch) = \emptyset$, i.e. when every Gieseker-semistable object is locally free, the Gieseker-to-Uhlenbeck morphism is an isomorphism. Is this assuming $\gcd(\ch_0, \ch_1 \cdot H) = 1$? If this isn't the case, then wouldn't it be conceivable to have a Gieseker-stable locally free sheaf $E$ with a subsheaf $F \subs E$ such that $\mu(F) = \mu(E)$ but the Hilbert polynomial of $F$ is smaller than that of $E$? In this case, $[E] \in M_{(\al,\om)}(\ch)$ would map to the point $[F \oplus E/F] \in U_\om(\ch)$, and there could be other non-isomorphic extensions of $E/F$ by $F$ that map to the same point, in which case $\mathrm{GU}: M_{(\al,\om)} \to U_\om(\ch)$ is not injective.
+    
+    \item What is the difference between the Simpson Chamber \texttt{SC} and the Simpson Wall \texttt{SW}? At the top of page 42, you say that $M_{\si \in \texttt{SW}(\ch)}$ parameterizes S-equivalence classes of pure 1-dimensional sheaves $E \in M_{\si \in \texttt{SC}(\ch)}$. Here do you mean S-equivalence classes with respect to stability induced by the reduced Hilbert polynomial? Is it not the case that $\si$-stability for $\si \in \texttt{SC}$ already agrees with Gieseker stability? And thus $M_{\si \in \texttt{SC}}$ already parameterizes S-equivalence classes of sheaves with respect to the reduced Hilbert polynomial?
+\end{itemize}
+
+
+
+\end{document}

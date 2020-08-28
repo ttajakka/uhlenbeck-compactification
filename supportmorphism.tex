@@ -1,0 +1,82 @@
+\documentclass[letterpaper,10pt]{article}
+
+\setlength{\evensidemargin}{-0.0in}
+\setlength{\oddsidemargin}{-0.0in}
+\setlength{\textwidth}{6.4in}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{mathpazo}
+\usepackage{relsize}
+\usepackage{mathtools}
+\usepackage{mathrsfs}
+\usepackage{verbatim}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
+
+\usepackage{tikz}
+\usetikzlibrary{matrix,arrows}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{Support morphism}
+\rhead{Tuomas Tajakka}
+%\cfoot{}
+\rfoot{}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\usepackage{amsthm}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{expl}[thm]{Example}
+\newtheorem{defn}[thm]{Definition}
+
+\theoremstyle{remark}
+\newtheorem{rmk}[thm]{Remark}
+\newtheorem{exer}[thm]{Exercise}
+
+\title{Support morphism}
+\author{Tuomas Tajakka}
+\date{}
+
+\usepackage{commands}
+
+
+\begin{document}
+
+\maketitle
+
+\section{Stuff}
+Let $X$ be a smooth, projective, irreducible surface, and let $H \subs X$ be a very ample divisor. Let $v \in K(X)$ be a class such that $\ch_0(v) = 0$ and $\ch_1(v) \cdot H > 0$. Let $\si \in \Stab(X)$ lie in the Simpson chamber for $v$. According to Wanmin, there is a line bundle $\sS$ on $\sM^\si(v)$ given by 
+\[ \sS = \la_\sE(\Oh_x) = \det(R p_*(\sE \otimes^\LL q^* \Oh_x)) = \det(\sE|^\LL_{\sM^\si(v) \times \{x\}}) \]
+that should play a role analogous to the line bundle $\sL_1$ on the Gieseker moduli space, and give a "support morphism" from $\sM^\si(v)$ to somewhere. 
+
+It is feasible that the line bundle $\sS$ is semiample on $\sM^\si(v)$. Using determinantal line bundle techniques, we need to check that the complex $\sE|^\LL_{\sM^\si(v) \times \{x\}}$ has cohomology sheaves in degrees $-1$ and $0$, and that for any closed point $t \in \sM^\si(v)$ we can choose $x \in X$ such that (i) the class $[\Oh_x] \in K(X)$ remains unchanged, and (ii) the cohomology of $\sE|^\LL_{\sM^\si(v) \times \{x\}}$ vanishes at $t$.
+
+We can show that $\sE|^\LL_{\sM^\si(v) \times \{x\}}$ is indeed concentrated in degrees $-1$ and $0$. By Cohomology and Base Change, it is enough to show that $H^i(X, \sE_t \otimes^\LL \Oh_x) = 0$ for any $t 
+\in \sM^\si(v)$ and $x \in X$ whenever $i \neq -1, 0$. Now $\sE_t$ is pure of dimension 1. If $x \notin \Supp(\sE_t)$, then $\sE_t \otimes^\LL \Oh_x = 0$ and the claim is clear. If $x \in \Supp(\sE_t)$, then $\sE_t$ has depth 1 as a module over the regular local ring $\Oh_{X,x}$, hence homological dimension 1 over $\Oh_{X,x}$ by the Auslander-Buchsbaum formula \cite[equation (1.1)]{HL}. Thus, $\sE_t$ can be resolved by a 2-term complex of free modules over $\Oh_{X,x}$, and so $\sE_t \otimes^\LL \Oh_x$ is supported in degrees $-1$ and $0$.
+
+%To achieve the second step, we note that $H^0(X, \sE_t \otimes^\LL \Oh_x) = 0$ if and only if $x \notin \Supp(\sE_t)$. Thus, we must need to choose $x \in X$ so that for any $t \in \sM^\si(v)$, the class $[\Oh_x] \in X$ contains $\Oh_y$ for some $y \notin \Supp(\sE_t)$.
+
+%We observe that if $x, y \in X$ are contained in a smooth rational curve $C \subs X$, then $[\Oh_x] = [\Oh_y]$ in $K(X)$. This holds because $[\Oh_x] = [\Oh_y]$ in $K(C)$ and the pushforward $i_*: \Coh(C) \to \Coh(X)$ is exact. Thus, it would be enough to show that $X$ contains a smooth rational curve $C$ of arbitrarily high degree. If this is the case, then we can choose $C$ so that it cannot be contained in $\Supp(\sE_t)$ for any $t \in \sM^\si(v)$, because the degree of $\Supp(\sE_t)$ is bounded.
+
+
+
+
+
+\bibliographystyle{siam}
+\addcontentsline{toc}{section}{References}
+\bibliography{bibliography}
+
+\end{document}
