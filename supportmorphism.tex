@@ -46,7 +46,7 @@
 \newtheorem{rmk}[thm]{Remark}
 \newtheorem{exer}[thm]{Exercise}
 
-\title{Support morphism}
+\title{Notes on the support morphism}
 \author{Tuomas Tajakka}
 \date{}
 
@@ -57,25 +57,75 @@
 
 \maketitle
 
-\section{Stuff}
-Let $X$ be a smooth, projective, irreducible surface, and let $H \subs X$ be a very ample divisor. Let $v \in K(X)$ be a class such that $\ch_0(v) = 0$ and $\ch_1(v) \cdot H > 0$. Let $\si \in \Stab(X)$ lie in the Simpson chamber for $v$. According to Wanmin, there is a line bundle $\sS$ on $\sM^\si(v)$ given by 
+Let $X$ be a smooth, projective, irreducible surface, and let $H \subs X$ be a very ample divisor. Let $v \in K(X)$ be a class such that $\ch_0(v) = 0$ and $\ch_1(v) \cdot H > 0$. Let $\si \in \Stab(X)$ lie in the Simpson chamber for $v$ (or be such that the $\si$-semistable objects of class $v$ are pure 1-dimensional sheaves). Let $\sM^\si(v)$ denote the stack of $\si$-semistable objects of class $v$, and let $\sE$ be the universal complex on $\sM^\si(v) \times X$.
+\begin{center}
+    \begin{tikzpicture}
+    \matrix (m) [matrix of math nodes, row sep=1em, column sep=1em]
+    { & \sE & \\ 
+    & \sM^\si(v) \times X & \\
+    \sM^\si(v) & & X \\};
+    \path[->] 
+    (m-2-2) edge node[auto,swap] {$ p $} (m-3-1)
+    (m-2-2) edge node[auto] {$ q $} (m-3-3)
+    ;
+    \path[-,dashed]
+    (m-1-2) edge node {$ $} (m-2-2)
+    ;
+    \end{tikzpicture}
+\end{center}
+Fix a closed point $x \in X$. According to \cite[Conjecture 4.6.3]{liuwanmin}, there is a line bundle $\sS$ on $\sM^\si(v)$ given by 
 \[ \sS = \la_\sE(\Oh_x) = \det(R p_*(\sE \otimes^\LL q^* \Oh_x)) = \det(\sE|^\LL_{\sM^\si(v) \times \{x\}}) \]
-that should play a role analogous to the line bundle $\sL_1$ on the Gieseker moduli space, and give a "support morphism" from $\sM^\si(v)$ to somewhere. 
+that should play a role analogous to the line bundle $\sL_1$ on the Gieseker moduli space, and give a "support morphism" from $\sM^\si(v)$ to a projective scheme. The line bundle $\sS$ depends on the class $[\Oh_x] \in K(X)$, but the class of $\sS$ in $\Num(\sM^\si(v))$ is independent of $x$. The goal of these notes is to outline an argument to show that $\sS$ is \textbf{semiample}, meaning that some power $\sS^{\otimes n}$ is globally generated.
 
-It is feasible that the line bundle $\sS$ is semiample on $\sM^\si(v)$. Using determinantal line bundle techniques, we need to check that the complex $\sE|^\LL_{\sM^\si(v) \times \{x\}}$ has cohomology sheaves in degrees $-1$ and $0$, and that for any closed point $t \in \sM^\si(v)$ we can choose $x \in X$ such that (i) the class $[\Oh_x] \in K(X)$ remains unchanged, and (ii) the cohomology of $\sE|^\LL_{\sM^\si(v) \times \{x\}}$ vanishes at $t$.
+We begin with some preliminary observations. Note that if $R_x$ is a local $\Oh_{X,x}$-algebra of length $n$, then $[R_x] = [\Oh_x^{\oplus n}] = n[\Oh_x]$ in $K(X)$, and so
+\[ \sS^{\otimes n} = \la_\sE(\Oh_x^{\oplus n}) = \la_\sE(R_x) = \det(R p_*(\sE \otimes^\LL q^* R_x)). \]
+We first show how we can "move the point $x$ around in $X$" without changing $\sS^{\otimes n}$. Choose a smooth proper curve $C \subs X$ that contains the point $x$, and let $i: C \to X$ be the closed embedding. Note that since $i_*: \Coh(C) \to \Coh(X)$ is exact, we get a group homomorphism 
+\[ i_*: K(C) \to K(X), \quad [F] \mapsto [i_* F]. \]
+We can now choose $R_x$ to actually be an $\Oh_{C,x}$-algebra of length $n$, which then fits in the short exact sequence
+\begin{equation}\label{ses1}
+    0 \to \Oh_C(-n x) \to \Oh_C \to R_x \to 0. 
+\end{equation}
+Now any nonzero section $s \in H^0(C, \Oh_C(n x))$ gives rise to an exact sequence
+\begin{equation}\label{ses2}
+    0 \to \Oh_C(-n x) \xrightarrow{s} \Oh_C \to \bigoplus_i R_{x_i} \to 0 
+\end{equation}
+where the $R_{x_i}$ are local $\Oh_{C,x_i}$-algebras of some lengths $n_i$ with $\sum_i n_i = n$. Thus, in $K(C)$, and hence in $K(X)$, we have the equality
+\begin{equation}\label{K-eq}
+    n[\Oh_x] = [R_x] = \sum_i [R_{x_i}] = \sum_i n_i [\Oh_{x_i}],
+\end{equation}
+and so
+\[ \sS^{\otimes n} \cong \la_\sE\left(\bigoplus_i R_{x_i}\right) = \det\left(R p_*\left(\sE \otimes^\LL q^*\left(\bigoplus_i R_{x_i}\right)\right)\right) = \det\left(\bigoplus_i \left(R p_*\left(\sE \otimes^\LL q^* R_{x_i}\right)\right)\right) \]
 
-We can show that $\sE|^\LL_{\sM^\si(v) \times \{x\}}$ is indeed concentrated in degrees $-1$ and $0$. By Cohomology and Base Change, it is enough to show that $H^i(X, \sE_t \otimes^\LL \Oh_x) = 0$ for any $t 
-\in \sM^\si(v)$ and $x \in X$ whenever $i \neq -1, 0$. Now $\sE_t$ is pure of dimension 1. If $x \notin \Supp(\sE_t)$, then $\sE_t \otimes^\LL \Oh_x = 0$ and the claim is clear. If $x \in \Supp(\sE_t)$, then $\sE_t$ has depth 1 as a module over the regular local ring $\Oh_{X,x}$, hence homological dimension 1 over $\Oh_{X,x}$ by the Auslander-Buchsbaum formula \cite[equation (1.1)]{HL}. Thus, $\sE_t$ can be resolved by a 2-term complex of free modules over $\Oh_{X,x}$, and so $\sE_t \otimes^\LL \Oh_x$ is supported in degrees $-1$ and $0$.
+We can use established determinantal line bundle techniques to show that $\sS^{\otimes n}$ is globally generated for some $n > 0$. Using (a slightly more general version of) \cite[Lemma 4.1]{t}, it is enough to check the following.
+\begin{enumerate}[(i)]
+    \item For any $y \in X$, any local $\Oh_{X,y}$-algebra $R_y$ of finite length, and any closed point $t \in \sM^{\si}(v)$, 
+    \[ \Hh^i(X, \sE_t \otimes^\LL R_y) = 0 \quad \mathrm{for} \quad i \neq -1, 0. \]
+    This implies in particular that $R p_*(\sE \otimes^\LL R_y)$ is locally represented by a two-term complex of vector bundles, and since $R_y$ is orthogonal to $\sE_t$ with respect to the Euler pairing, the complex has rank 0, and so the line bundle $\sE^{\otimes n} = \la_\sE(\oplus_i R_{x_i})$ acquires a section that depends on the points $x_i$ and the lengths $n_i$.
+    \item For any closed point $t \in \sM^\si(v)$, we can find points $x_i \in X$ and local $\Oh_{X,x_i}$-algebras $R_{x_i}$ of lengths $n_i$ with $\sum_i n_i = n$ such that $n [\Oh_x] = \sum_i n_i [\Oh_{x_i}] = \sum_i [R_{x_i}]$, and
+    \[ \Hh^{-1}(X, \sE_t \otimes^\LL R_{x_i}) = \Hh^0(X, \sE_t \otimes^\LL R_{x_i}) = 0. \]
+    This implies that the section constructed in (i) is nonvanishing at the point $t \in \sM^\si(v)$.
+\end{enumerate} 
 
-%To achieve the second step, we note that $H^0(X, \sE_t \otimes^\LL \Oh_x) = 0$ if and only if $x \notin \Supp(\sE_t)$. Thus, we must need to choose $x \in X$ so that for any $t \in \sM^\si(v)$, the class $[\Oh_x] \in X$ contains $\Oh_y$ for some $y \notin \Supp(\sE_t)$.
+We first show (i). Recall that $\sE_t$ is pure of dimension 1. If $y \notin \Supp(\sE_t)$, then $\sE_t \otimes^\LL R_y = 0$ and the claim is clear. If $y \in \Supp(\sE_t)$, then the stalk $(\sE_t)_y$ has depth 1 as a module over the regular local ring $\Oh_{X,y}$, hence homological dimension 1 over $\Oh_{X,y}$ by the Auslander-Buchsbaum formula \cite[equation (1.1)]{HL}. Thus, $(\sE_t)_y$ can be resolved by a 2-term complex of free modules over $\Oh_{X,y}$, and so $\sE_t \otimes^\LL R_y$ is supported in degrees $-1$ and $0$. Now since the cohomology sheaves of $\sE_t \otimes^\LL R_y$ are 0-dimensional, it follows that 
+\[ \Hh^i(X, \sE_t \otimes^\LL R_y) = 0 \quad \mathrm{for} \quad i \neq -1, 0. \]
 
-%We observe that if $x, y \in X$ are contained in a smooth rational curve $C \subs X$, then $[\Oh_x] = [\Oh_y]$ in $K(X)$. This holds because $[\Oh_x] = [\Oh_y]$ in $K(C)$ and the pushforward $i_*: \Coh(C) \to \Coh(X)$ is exact. Thus, it would be enough to show that $X$ contains a smooth rational curve $C$ of arbitrarily high degree. If this is the case, then we can choose $C$ so that it cannot be contained in $\Supp(\sE_t)$ for any $t \in \sM^\si(v)$, because the degree of $\Supp(\sE_t)$ is bounded.
+Next we show (ii). Choose a smooth proper curve $C \subs X$ that contains the point $x$ but \emph{does not contain any components of} $\Supp(\sE_t)$ \emph{for any} $t \in \sM^{\si}(v)$. We can achieve this because the family $\sE$ is bounded, so it follows that the $\Supp(\sE_t)$ have bounded degree. Fix a closed point $t \in \sM^\si(v)$, and denote by $z_1,\ldots,z_m$ the finitely many points in $C \cap \Supp(\sE_t)$. Choose $n > 0$ so that the line bundle $\Oh_C(n x)$ has a section $s \in H^0(C, \Oh_C(n x))$ not vanishing at any of the points $z_i \in C$. Like in equation \eqref{K-eq}, we have the equality
+\[ n[\Oh_x] = \sum_i [R_{x_i}] \]
+in $K(X)$ for some local $\Oh_{X,x_i}$-algebras of finite length, where the $x_i$ are the points where the section $s$ vanishes. Now since $x_i \notin \Supp(\sE_t)$, we have $\sE_t \otimes^\LL R_{x_i} = 0$, and so (ii) follows. 
+
+All this implies that for any closed point $t \in \sM^\si(v)$, there is an integer $n > 0$ and a global section $\si \in H^0(\sM^\si(v), \sS^{\otimes n})$ that is nonvanishing at $t$. Since $\sM^\si(v)$ is quasicompact, it follows that we can choose a single $n$ such that $\sS^{\otimes n}$ is globally generated. Moreover, since $[\Oh_x]$ is orthogonal to $v$ with respect to the Euler pairing, it follows that the line bundle $\sS^{\otimes n}$ together with the generating sections descends to the good moduli space $M^\si(v)$ (which exists as a proper algebraic space by \cite{AHLH}). This means that we obtain a morphism from $\pi: M^\si(v) \to \p^N$ for some $N$. Some natural questions arise:
+\begin{enumerate}[1)]
+    \item How does the morphism change as $N$ grows? Does the image stabilize? Does it have an interpretation as a moduli space?
+    \item What are the fibers of the morphism $\pi$?
+    \item Is the section ring $\bigoplus_n H^0(\sM^\si(v), \sS^{\otimes n})$ finitely generated?
+\end{enumerate}
+We make another observation. Already the line bundle $\sS = \la_\sE(\Oh_x)$ acquires a global section by (i) above. This section vanishes exactly at the points $t \in \sM^\si(v)$ for which $\Supp(\sE_t)$ contains the point $x \in X$. Thus, the line bundle indeed attempts to distinguish between supports of the sheaves $\sE_t$, and the morphism $\pi$ can be aptly called the "support morphism". Moreover, if $\sS$ was independent of $x \in X$, then we could choose $x$ to avoid any given $\Supp(\sE_t)$, so $\sS$ would itself be globally generated. This is the case when $X = \p^2$ since $[\Oh_x] = [\Oh_y] \in K(\p^2)$ for any closed points $x,y \in \p^2$.
 
 
 
 
 
-\bibliographystyle{siam}
+\bibliographystyle{alpha}
 \addcontentsline{toc}{section}{References}
 \bibliography{bibliography}
 

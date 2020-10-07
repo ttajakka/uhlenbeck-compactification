@@ -60,15 +60,47 @@
 \section{Introduction}
 
 \section{PT-semistable objects}
-Let $X$ be a smooth, projective threefold with very ample line bundle $\Oh_X(1)$. A \textbf{PT-semistable object} is a complex $E \in D^b(X)$ satisfying the following conditions.
+In this section we recall definitions and basic properties of polynomial stability and PT-semistable objects. We largely follow \cite{lo-PT1} and \cite{lo-PT2} in our presentation, except that we use a slightly different convention for the heart of category of perverse sheaves.
+
+Let $X$ be a smooth, projective threefold with very ample line bundle $\Oh_X(1)$. Polynomial stability on $X$ is defined as a stability condition on a heart $\sA^p(X) \subs D^b(X)$. The heart $\sA^p(X)$ is defined using tilting as follows. Define full subcategories
+\[ \Coh_{\le 1}(X) = \{ E \in \Coh(X) \;|\; \dim(\Supp(X)) \le 1 \} \]
+and
+\[ \Coh_{\ge 2}(X) = \{ E \in \Coh(X) \;|\; \Hom(T,E) = 0 \; \forall \; T \in \Coh_{\le 1}(X) \}. \]
+For any coherent sheaf $E$ on $X$ there exists a unique short exact sequence
+\begin{equation}\label{torsionses}
+    0 \to T \to E \to F \to 0
+\end{equation} 
+where $T \in \Coh_{\le 1}(X)$ and $F \in \Coh_{\ge 2}(X)$. Here the subsheaf $T \subs E$ is the union of all subsheaves $T' \subs E$ with $\dim(\Supp(T')) \le 1$. The exact sequence \eqref{torsionses} shows that the pair $(\Coh_{\le 1}(X), \Coh_{\ge 2}(X))$ is a \emph{torsion pair} on $\Coh(X)$. We define the heart $\sA^p(X) \subs D^b(X)$ as the tilt with respect to this torsion pair, that is,
+\begin{align}\label{perverseheart}
+    \sA^p(X) & = \langle \Coh_{\ge 2}(X), \Coh_{\le 1}(X)[-1] \rangle \\
+             & = \{ E \in D^b(X) \;|\; \sH^0(E) \in \Coh_{\le 1}(X), \sH^1(E) \in \Coh_{\ge 2}(X), \sH^i(E) = 0 \;\forall i \neq 0,1 \}. \nonumber
+\end{align}
+Note that this definition of $\sA^p(X)$ differs from that in \cite{lo-PT1}, \cite{lo-PT2}, and 
+In summary, a PT-semistable object $E \in D^b(X)$ satisfies the following conditions.
 \begin{enumerate}[(i)]
     \item $\sH^0(E)$ is torsion-free and $\mu$-semistable,
     \item $\sH^1(E)$ is 0-dimensional,
     \item $\Hom_{D^b(X)}(T[-1], E) = 0$ for any 0-dimensional sheaf $T$,
     \item $\sH^i(E) = 0$ for $i \neq 0, 1$.
 \end{enumerate}
+
+
+
+
+\section{Moduli stacks}
 The stack of PT-semistable objects of a fixed numerical class $v \in \Kn(X)$ is a universally closed algebraic stack of finite type by the work of Jason Lo. The goal of this note is to construct a globally generated line bundle on this stack.
 
+\section{Construction of good moduli spaces}
+
+\section{Semiample determinantal line bundle}
+Fix a class $v \in \Kn(X)$ of positive rank and let $E \in D^b(X)$ be an object of class $v$ satisfying the following conditions.
+\begin{enumerate}[(i)]
+    \item $\sH^0(E)$ is torsion-free and $\mu$-semistable,
+    \item $\sH^1(E)$ is 0-dimensional,
+    \item $\Hom_{D^b(X)}(T[-1], E) = 0$ for any 0-dimensional sheaf $T$,
+    \item $\sH^i(E) = 0$ for $i \neq 0, 1$.
+\end{enumerate}
+In particular, $E$ can be a 
 Setting $F = \sH^0(E)$ and $T = \sH^1(E)$, we see that $E$ fits in an exact triangle
 \[ F \to E \to T[-1]. \]
 Since $F$ is torsion-free, it embeds into its double dual $F^{\vee\vee}$ and the quotient $Q \coloneqq F^{\vee\vee}/F$ is 1-dimensional. We first claim that $Q$ is pure 1-dimensional. If not, let $Q_0 \subs Q$ denote the maximal 0-dimensional subsheaf. We have an exact triangle
@@ -120,12 +152,6 @@ Let now $C \subs X$ be a smooth, connected curve that is the intersection of $H$
 \[ \sH^0(E|^\LL_C) \to E|^\LL_C \to \sH^1(E|^\LL_C), \]
 where $\sH^1(E|^\LL_C)$ is a torsion sheaf.
 
-\section{Moduli stacks}
-
-\section{Construction of good moduli spaces}
-
-\section{Semiample determinantal line bundle}
-
 \section{TODO}
 \begin{itemize}
     \item For large enough $a$, the curve $C = H \cap H'$ cannot contain components of $Q = F^{\vee\vee}/F$. This should follow from the fact that the family of PT-semistable objects is bounded, and hence so are the degrees of the possible $Q$.
@@ -142,7 +168,7 @@ where $\sH^1(E|^\LL_C)$ is a torsion sheaf.
     \item Do the images in $\p^N$ stabilize for increasingly large powers of $\la_{\sE}(u_2(v))$?
 \end{itemize}
 
-\bibliographystyle{siam}
+\bibliographystyle{alpha}
 \addcontentsline{toc}{section}{References}
 \bibliography{bibliography}
 
