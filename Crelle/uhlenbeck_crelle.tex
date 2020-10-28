@@ -1,4 +1,4 @@
-\documentclass[letterpaper,11pt]{amsart}%{article}%
+\documentclass[letterpaper,12pt]{amsart}
 
 %\setlength{\evensidemargin}{-0.0in}
 %\setlength{\oddsidemargin}{-0.0in}
@@ -27,12 +27,10 @@
 %\usepackage{fancyhdr}
 %\pagestyle{fancy}
 %\lhead{Uhlenbeck Compactification}
-%\rhead{}
-%\chead{Tuomas Tajakka}
+%\rhead{Tuomas Tajakka}
 %\cfoot{}
 %\rfoot{}
-%\renewcommand{\headrulewidth}{0pt}
-%\pagestyle{headings}
+%\renewcommand{\headrulewidth}{0.4pt}
 
 \usepackage{amsthm}
 
@@ -48,14 +46,13 @@
 \newtheorem{rmk}[thm]{Remark}
 \newtheorem{exer}[thm]{Exercise}
 
-\title{Uhlenbeck Compactification as a Bridgeland Moduli Space}
+\title{Uhlenbeck compactification as a Bridgeland moduli space}
 \author{Tuomas Tajakka}
 \date{July 21, 2020}
 
 \usepackage{commands}
 
 \setcounter{tocdepth}{1}
-
 
 \begin{document}
 
@@ -74,8 +71,6 @@
 \section{Introduction}
 The aim of this paper is to prove projectivity of certain moduli spaces of Bridgeland semistable objects on a smooth, projective surface $X$ over $\C$, and relate these moduli spaces to the Uhlenbeck compactification of the moduli of $\mu$-stable vector bundles on $X$.
 
-%{\color{red} Openness and boundedness??}
-
 \subsection*{Classical background}
 
 Constructing projective moduli spaces is an important problem in algebraic geometry. Some of the early successes in this direction were provided by Mumford who developed the machinery of Geometric Invariant Theory (GIT) for taking projective quotients of varieties by group actions, and used it to construct various moduli spaces. An important example of this method is the construction of the moduli space of slope-semistable sheaves on a curve \cite{mumford}. The \textit{slope} of a coherent sheaf $F$ on a smooth, projective curve $C$ is the rational number $\mu(F) = \deg(c_1(F))/\rk(F)$. A locally free sheaf $F$ is \textit{semistable} if for every proper nonzero subsheaf $E \subs F$ the inequality $\mu(E) \le \mu(F)$ holds, \textit{stable} if $\mu(E) < \mu(F)$, and \textit{polystable} if $F \cong \oplus_i F_i$ where the $F_i$ are stable bundles of the same slope. Every semistable sheaf $F$ has a \textit{Jordan-H\"older filtration} by stable sheaves $F_i$, and the polystable sheaf $\gr(F) = \oplus_i F_i$ is called the \textit{associated graded} of $F$. Two semistable sheaves $F$ and $F'$ are \textit{S-equivalent} if $\gr(F) \cong \gr(F')$, and every S-equivalence class contains a unique polystable sheaf. The projective moduli space Mumford constructed parameterizes S-equivalence classes of semistable sheaves, or equivalently isomorphism classes of polystable sheaves, and contains the locus of stable sheaves as an open subscheme.
@@ -84,7 +79,7 @@ The notion of slope-stability has been generalized to a higher dimensional smoot
 
 A direct generalization of slope-stability to a higher dimensional $X$ is obtained by modifying the formula to be $\mu(F) = (c_1(F) \cdot H)/\rk(F)$. Although Jordan-H\"older filtrations exist, and $\mu$-stability has many other useful properties, this notion of stability does not allow for a moduli space parameterizing S-equivalence classes. However, when $X$ is a surface, a related projective scheme parameterizing sheaves up to a coarser equivalence relation was constructed by Li \cite{li} following work of Uhlenbeck and Donaldson in gauge theory. This so-called Uhlenbeck compactification contains the moduli of $\mu$-stable vector bundles as an open subscheme. Two $\mu$-semistable sheaves $F_1$ and $F_2$ are identified in the Uhlenbeck compactification precisely when $\gr(F_1)^{\vee\vee} \cong \gr(F_2)^{\vee\vee}$ and the 0-dimensional sheaves $\gr(F_1)^{\vee\vee}/\gr(F_1)$ and $\gr(F_2)^{\vee\vee}/\gr(F_2)$ are supported at the same points of $X$ with the same lengths. 
 
-\subsubsection*{Bridgeland stability}
+\subsection*{Bridgeland stability}
 
 A more general notion of stability was introduced by Bridgeland \cite{bridgeland} following the work of Douglas in string theory. Bridgeland's idea is to extend stability from coherent sheaves to objects in the derived category $D^b(X)$. A \textit{Bridgeland stability condition} on $X$ is a pair $\si = (\sA, Z)$ consisting of a heart of a bounded t-structure $\sA \subs D^b(X)$ and a group homomorphism 
 \[ Z: K(\sA) \to \C \]
@@ -92,7 +87,7 @@ that gives rise to a slope function on $\sA$. The set of all such stability cond
 
 Although constructing stability conditions on higher dimensional varieties remains an important open problem, a general method for producing stability conditions on a surface $X$ was developed by Bridgeland \cite{bridgelandK3} for K3 surfaces, and extended by Arcara and Bertram \cite{ABL13} for all surfaces. Moreover, a moduli space $M^\si(v)$ parameterizing S-equivalence classes of $\si$-semistable objects in $\sA$ of numerical class $v$ exists as a proper algebraic space \cite[Theorem 7.25, Example 7.27]{AHLH} and possesses a natural nef divisor class $l_\si$ that varies with the stability condition $\si$ \cite{BM}. Despite this, projectivity of Bridgeland moduli spaces is known only in few cases.
 
-\subsubsection*{Statement of results}
+\subsection*{Statement of results}
 
 The goal of this work is to prove projectivity of the Bridgeland moduli space when $X$ is an arbitrary smooth, projective surface, and $\si$ lies on the ``vertical wall'' bounding the chamber corresponding to Gieseker stability. The main results are Theorem \ref{projectivity} and Theorem \ref{uhlenbeck} and can be summarized as follows.
 \begin{thm}
@@ -116,7 +111,7 @@ in the heart $\sA \subs D^b(X)$. The containment $T[-1] \subs F$ is part of the 
 
 Part (a) of the theorem is known to experts in general and worked out by Lo and Qin in \cite{LQ} in the case when $\rk(v)$ and $H \cdot c_1(v)$ are coprime, where the authors also observe the set theoretic bijection with the Uhlenbeck compactification. Although we include a proof in the general case, we claim no originality.
 
-\subsubsection*{Relation to previous work}
+\subsection*{Relation to previous work}
 Bridgeland moduli spaces on surfaces are known to be projective in only some cases:
 \begin{itemize}
     \item When $X$ is either $\p^2$ \cite{ABCH} or $\p^1 \times \p^1$ or the blow-up of $\p^2$ at a point \cite{AM}, all Bridgeland moduli spaces can be related to moduli of quiver representations. Similar results are conjectured to hold for all Del Pezzo surfaces \cite{AM}.
@@ -127,7 +122,7 @@ Bridgeland moduli spaces on surfaces are known to be projective in only some cas
     
     \item When $X$ is an abelian surface of Picard rank 1, Maciocia and Meachan \cite{MM} construct moduli spaces $M^\si(v)$ for certain classes $v$ of rank 1 and when $\si$ is generic for $v$ by relating $M^\si(v)$ to Gieseker moduli spaces via a Fourier-Mukai transform.
     
-    \item When $X$ is a K3 surface and $\si$ is generic with respect to $v$, Bayer and Macr\`i show in \cite{BM}, generalizing similar results for K3 and abelian surfaces in \cite{mmy}, that $M^\si(v)$ is projective by relating $\si$-stability on $X$ to Gieseker stability on a Fourier-Mukai partner. 
+    \item When $X$ is a K3 surface and $\si$ is generic with respect to $v$, Bayer and Macr\`i show in \cite{BM}, generalizing similar results for K3 and abelian surfaces in \cite{mmy}, that $M^\si(v)$ is projective by relating $\si$-stability on $X$ to Gieseker stability on a Fourier-Mukai partner.
     
     \item When $X$ is an unnodal Enriques surface and $\si$ is generic with respect to $v$, Nuer shows in \cite{nuer} that the moduli space $M^\si(v)$ is projective by producing a finite map to a related Bridgeland moduli space on the K3 universal cover of $X$.
     
@@ -136,7 +131,7 @@ While in all of these cases the projectivity of the moduli spaces ultimately rel
 
 The relationship between $M^{\mathrm{Uhl}}(v)$ and $M^\si(v)$ when $\si$ lies on the vertical wall for $v$ has been previously studied by Lo in \cite{lo}, whose result together with properness of the good moduli space implies that when $X$ is a K3 surface, the good moduli space of $\si$-semistable objects is projective. Lo achieves this by relating $M^\si(v)$ to a moduli space of $\mu$-stable locally free sheaves on a Fourier-Mukai partner of $X$. Our results subsumes Lo's results and avoids the use of a Fourier-Mukai transform.
 
-\subsubsection*{Open questions}
+\subsection*{Open questions}
 The following are potential next questions in the direction of this paper.
 \begin{itemize}
     \item What is the local geometry of $M^\si(v)$, and is the morphism $M^{\mathrm{Uhl}}(v) \to M^\si(v)$ an isomorphism?
@@ -144,8 +139,9 @@ The following are potential next questions in the direction of this paper.
     \item Can the methods of this paper be adapted to showing projectivity of more general Bridgeland moduli spaces on surfaces, or some other moduli spaces of sheaves or complexes on varieties? It would even be interesting to construct Gieseker moduli spaces without GIT. 
 \end{itemize}
 
-\subsubsection*{Acknowledgements}
-The author would like to thank his advisor Jarod Alper for suggesting this problem and for constant guidance throughout the project, as well as Benjamin Schmidt, Aaron Bertram, and Max Lieblich for useful discussions. The original idea for the problem came via indirect communication from Emanuele Macr\`i. The author thanks Jason Lo and Wanmin Liu for comments on an earlier version of the paper.
+\subsection*{Acknowledgements}
+
+The author would like to thank his advisor Jarod Alper for suggesting this problem and for constant guidance throughout the project, as well as Benjamin Schmidt, Aaron Bertram, and Max Lieblich for useful discussions. The original idea for the problem came via indirect communication from Emanuele Macr\`i. 
 
 
 
@@ -153,8 +149,8 @@ The author would like to thank his advisor Jarod Alper for suggesting this probl
 %%%%%%%%%%  BRIDGELAND STABILITY %%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Bridgeland Stability}
-In this section we recall definitions and basic notions regarding Bridgeland stability. An excellent exposition of the material is \cite{MS}. 
+\section{Bridgeland stability}
+In this section we recall definitions and basic notions concerning Bridgeland stability. An excellent exposition of the material is \cite{MS}. 
 
 Let $X$ be a smooth, projective variety, and let $\Kn(X)$ denote its numerical Grothendieck group, that is, the quotient of $K(X)$ by the kernel of the Euler pairing $\chi(-,-)$. A \textbf{(numerical) stability condition} on $X$ is a pair $\si = (\sA, Z)$, where \begin{itemize}
     \item $\sA \subs D^b(X)$ is the heart of a bounded t-structure, and
@@ -171,16 +167,16 @@ With this notion of stability, the pair $\si = (\sA, Z)$ must satisfy the follow
     \[ 0 = A_0 \subsetneq A_1 \subsetneq \cdots \subsetneq A_{m-1} \subsetneq A_m = A, \]
     where each quotient $F_i = A_i/A_{i-1}$ is semistable and
     \[ \nu_Z(F_1) > \cdots > \nu_Z(F_m).  \]
-    \item {\bf Support property}: there is a symmetric bilinear form $Q$ on $\Kn(X)_\R$ that is negative definite on the kernel of $Z$, and $Q(A, A) \ge 0$ for every semistable object $A \in \sA$.
+    \item {\bf Support property}: there is a symmetric bilinear form $Q$ on $\Kn(X) \otimes \R$ that is negative definite on the kernel of $Z$, and $Q(A, A) \ge 0$ for every semistable object $A \in \sA$.
 \end{enumerate}
 
 The set $\Stab(X)$ of stability conditions on $X$ has a natural topology with respect to which the map 
 \[ \Stab(X) \to \Hom(\Kn(X), \C), \quad (\sA, Z) \mapsto Z \]
-is a local homeomorphism. Moreover, for a numerical class $v \in \Kn(X)$ there is a locally finite collection of real codimension 1 walls inside $\Stab(X)$ such that the sets of stable and semistable objects remains constant when $\si$ varies within a connected component of the complement of the walls. 
+is a local homeomorphism. Moreover, for a given numerical class $v \in \Kn(X)$ there is a locally finite collection of real codimension 1 walls inside $\Stab(X)$ such that the sets of stable and semistable objects remains constant when $\si$ varies within a connected component of the complement of the walls. 
 
 If $C$ is a curve, an example of a stability condition on $C$ is given by $\si = (\Coh(C), -\deg + i \rk)$, giving rise to the classical Mumford slope. However, if $\dim X \ge 2$, the standard heart $\Coh(X) \subs D^b(X)$ can never be the heart of a stability condition. 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Stability conditions on surfaces}\label{section:stabcondsurf}
 We now recall a construction of stability conditions on the derived category of a smooth, projective surface $X$ equipped with a very ample divisor $H$. This is achieved by tilting the standard heart $\Coh(X) \subs D^b(X)$ with respect to $\mu$-stability. 
@@ -195,8 +191,8 @@ if $\rk(E) > 0$, and $\mu_B(E) = \infty$ if $\rk(E) = 0$, i.e. $E$ is a torsion 
 
 Since Harder-Narasimhan filtrations into $\mu$-semistable factors exist, for every real number $\be$ we obtain a torsion pair on $\Coh(X)$ by setting
 \begin{align*}
-    \sT_\be & = \{ E \in \Coh(X) \;|\; \mathrm{every\;semistable\;factor\;} F \mathrm{\;of\;} E \mathrm{\;satisfies\;} \mu_B(F) > \be\}, \\
-    \sF_\be & = \{ E \in \Coh(X) \;|\; \mathrm{every\;semistable\;factor\;} F \mathrm{\;of\;} E \mathrm{\;satisfies\;} \mu_B(F) \le \be\}.
+    \sT_\be & = \{ E \in \Coh(X) \;|\; \mu_B(F) > \be \mathrm{\;for\;every\;semistable\;factor\;} F \mathrm{\;of\;} E \}, \\
+    \sF_\be & = \{ E \in \Coh(X) \;|\; \mu_B(F) \le \be \mathrm{\;for\;every\;semistable\;factor\;} F \mathrm{\;of\;} E \}.
 \end{align*}
 Thus, we obtain a heart $\Coh^\be(X) = \langle \sF_\be[1], \sT_\be \rangle \subs D^b(X)$ as the full subcategory whose objects are precisely those $E \in D^b(X)$ fitting in an exact triangle
 \[ F[1] \to E \to T, \]
@@ -205,9 +201,6 @@ where $F \in \sF_\be, T \in \sT_\be$.
 For any $\al \in \R_{>0}$ we define a map $Z_{\al,\be}: \Kn(X) \to \C$ by setting
 \begin{align*}
     Z_{\al, \be}(E) & = -\int_X e^{-(\be + i \al)H} \ch^B(E) \\
-    % & = -\int_X \left(1 - (\be + i\al) H + \frac{1}{2}(\be^2 + 2 i \al \be - \al^2) H^2\right)\cdot \\
-    % & \quad (\ch^B_0(E) + \ch^B_1(E) + \ch^B_2(E)) \\
-    % & = - \ch^B_2(E) + (\be + i\al) H\cdot \ch^B_1(E) - \frac{1}{2}(\be^2 + 2 i \al \be - \al^2)H^2 \ch^B_0(E) \\
     & = \frac{\al^2 - \be^2}{2} H^2 \ch^B_0(E) + \be H\cdot\ch^B_1(E) - \ch^B_2(E) \\
     & \quad  + i\al(H \cdot \ch^B_1(E) - \be H^2 \ch^B_0(E)).
 \end{align*}
@@ -227,7 +220,7 @@ We will need the following observation.
 \begin{lem}\label{ss-ses}
     If $E \in \Coh^\be(X)$ and $\im Z_{\al,\be}(E) = 0$, then in the above triangle 
     \[ F[1] \to E \to T, \]
-    $T$ has 0-dimensional support, and $F$ is a $\mu$-semistable sheaf with $\mu_B(F) = \be$.
+    $T$ has 0-dimensional support, and $F$ is a $\mu$-semistable sheaf with $\mu_B(F) \\ = \be$.
 \end{lem}
 \begin{proof}
     Note that for a coherent sheaf $G$, we have $\im Z_{\al,\be}(G) > 0$ (resp. $= 0$) if and only if $\mu_B(G) > \be$ (resp. $= \be$). It follows from the construction that for any $E \in \Coh^\be(X)$,
@@ -275,11 +268,9 @@ where the last line is a direct computation. But $H^2 > 0$ since $H$ is ample, a
 \subsection{Wall-and-chamber structure}
 We visualize the stability conditions $\si_{\al,\be} = (\Coh^\be(X), Z_{\al,\be})$ as living in the upper half-plane with horizontal $\be$-axis and vertical $\al$-axis. The wall-and-chamber structure in the $(\al,\be)$-plane was analyzed in \cite{maciocia} and turns out to be rather simple. If $v \in \Kn(X)$ is a class of positive rank, then there is a unique vertical wall at 
 \[ \be_0 = \frac{H \cdot \ch_1^B(v)}{H^2 \ch_0(v)}, \] and on each side of the vertical wall, there is a nested sequence of semicircles with center on the $\be$-axis and contained in a largest semicircle. In particular, on either side of the vertical wall, there is an unbounded open chamber. The walls in the $(\al,\be)$-plane are pairwise disjoint, and so there is no further wall-and-chamber decomposition within each wall. In the unbounded open chamber left of the vertical wall, $\si$-stability coincides with Gieseker stability.
-% We are particularly interested in understanding how stability changes upon crossing the vertical wall from one unbounded region to the other.
 \begin{center}
 \begin{tikzpicture}
 
-%\fill[black!10!white] (-4,0) -- (-3.1,0) arc (180:0:2) -- (1,0) -- (1,3.5) -- (-4,3.5);
 \shadedraw[bottom color=black!30!white,top color=white,draw=white] (-4,0) arc (180:0:2.49) -- (0,0) -- (1,0) -- (1,3.5) -- (-4,3.5);
 
 \draw[thick,->] (-4,0) -- (4,0) node[anchor=south east] {$\be$};
@@ -302,15 +293,13 @@ We visualize the stability conditions $\si_{\al,\be} = (\Coh^\be(X), Z_{\al,\be}
 \draw (-2,3) node {Gieseker chamber};
 \draw (2.8,3) node {vertical wall $\be = \be_0$};
 \fill (1,2) circle (0.04) node[anchor=east] {$\si$};
-%\draw (1,-0.25) node {$\be_0$};
 
 \end{tikzpicture}
 \end{center}
 Our goal is to study the moduli space of semistable objects when $\si$ lies on the vertical wall.
 
 \subsection{Stability on the vertical wall}\label{section:stabvertwall}
-In this subsection we classify stable and semistable objects on the vertical wall %{\color{red} and in the left unbounded chamber (and maybe right chamber also?)}. 
-Let $v \in \Kn(X)$ be a class of positive rank, and let 
+In this subsection we classify stable and semistable objects on the vertical wall. Let $v \in \Kn(X)$ be a class of positive rank, and let 
 \[ (\Coh^{\be_0}(X), Z_{\al,\be_0}) \in \Stab(X) \] 
 be the stability condition constructed in the previous section with 
 \[ \be_0 = \frac{H \cdot \ch_1^B(v)}{H^2 \ch_0(v)} \quad \mathrm{and} \quad \al > 0. \] Note that since other walls do not intersect the vertical wall, the sets of stable and semistable objects are independent of $\al$.
@@ -354,7 +343,9 @@ in a series of lemmas below. Lemmas \ref{muStableLfIsSigmaStable} and \ref{skysc
         \item If $\sH^0(F) \xrightarrow{\sim} E$, then $G \xrightarrow{\sim} \sH^1(F)$. But $G \in \sF_{\be_0}, \sH^1(F) \in \sT_{\be_0}$, so we must have $G = \sH^1(F) = 0$, hence $F = \sH^0(F) = E$.
         
         \item If $\sH^0(F)$ is a proper, nonzero subsheaf of $E$, then by the assumption on $E$ we have $\mu_B(\sH^0(F)) < \mu_B(E) = \be_0$. Let $N$ denote the image of the map $E \to G$, so that we have the short exact sequences
-        \[ 0 \to \sH^0(F) \to E \to N \to 0 \qquad \mathrm{and} \qquad 0 \to N \to G \to \sH^1(F) \to 0. \]
+        \[ 0 \to \sH^0(F) \to E \to N \to 0 \]
+        and 
+        \[ 0 \to N \to G \to \sH^1(F) \to 0. \]
         By assumption, $\nu(G) = \infty$ so $G$ is $\mu$-semistable, and thus $\mu_B(N) \le \mu_B(G)$. This gives the absurd inequality 
         \[ \be_0 = \mu_B(E) < \mu_B(N) \le \mu_B(G) \le \mu_B(\sH^1(F)) \le \be_0. \]
         Thus, this case is impossible.
@@ -375,7 +366,7 @@ in a series of lemmas below. Lemmas \ref{muStableLfIsSigmaStable} and \ref{skysc
         \[ \mu_B(G) H^2 \rk(G) = \mu_B(E) H^2 \rk(E) + H \cdot \ch^B_1(F'), \]
         so that
         \[ H \cdot \ch^B_1(F') = H^2 (\mu_B(G) - \be_0)\rk(E) \le 0 \]
-        since by assumption $\mu_B(G) \le \be_0$, again a contradiction. Thus, $F'$ has 0-dimensional support. Now if $F' \neq 0$, then we have a locally free subsheaf $E$ of a torsion-free sheaf $G$ with 0-dimensional quotient $F'$. But as mentioned in \cite[Example 1.1.16]{HL}, the quotient $G/E$ has no 0-dimensional associated points. Thus, we must have $F' = 0$.
+        since by assumption $\mu_B(G) \le \be_0$, again a contradiction. Thus, $F'$ has 0-dimensional support. Now if $F' \neq 0$, then we have a locally free subsheaf $E$ of a torsion-free sheaf $G$ with 0-di\-men\-sion\-al quotient $F'$. But as mentioned in \cite[Example 1.1.16]{HL}, the quotient $G/E$ has no 0-dimensional associated points. Thus, we must have $F' = 0$.
     \end{itemize} 
 \end{proof}
 
@@ -432,16 +423,11 @@ in a series of lemmas below. Lemmas \ref{muStableLfIsSigmaStable} and \ref{skysc
 Proposition \ref{ss-object-vertical-classification} can also be deduced from \cite[Proposition 2.2]{huy} as follows. Any stable object $E \in \sA$ is minimal, since a nonzero surjection $E \twoheadrightarrow E'$ in $\sA$ implies $\nu(E') > \nu(E)$ unless $E' = E$. Conversely any minimal object is automatically stable. Although \cite[Proposition 2.2]{huy} is stated in the case when $X$ is a K3 surface, the proof works for any surface.
 \end{rmk}
 
-%\subsection{Stability left of the vertical wall}
-%In this section we recall the fact that Bridgeland semistability "at the large volume limit" left of the vertical wall coincides with Gieseker stability.
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%  MODULI OF SEMISTABLE OBJECTS  %%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Moduli of Semistable Objects}
+\section{Moduli of semistable objects}
 In this section we overview some definitions and results regarding moduli spaces of Bridgeland semistable objects. 
 
 \subsection{Moduli stacks}
@@ -486,11 +472,11 @@ The existence of a good moduli space for a given algebraic stack is a subtle que
 %%%%%%  DETERMINANTAL LINE BUNDLES  %%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Determinantal Line Bundles}
+\section{Determinantal line bundles}
 In this section we recall the construction of determinantal line bundles and consider some particular line bundles on a Bridgeland moduli space arising from this construction. Material for this section follows \cite[\href{https://stacks.math.columbia.edu/tag/0FJI}{Tag 0FJI}]{stacks-project}, \cite[\href{https://stacks.math.columbia.edu/tag/0FJW}{Tag 0FJW}]{stacks-project}, and \cite[Section 8.1]{HL}. The original exposition is \cite{KM76}.
 
 \subsection{Construction of determinantal line bundles}
-If $S$ is a scheme, the rule that sends a locally free sheaf $F$ to its determinant line bundle $\det(F) = \bigwedge^{\rk(F)} F$ extends to a functor
+Let $S$ be a scheme. The rule that sends a locally free sheaf $F$ to its determinant line bundle $\det(F) = \bigwedge^{\rk(F)} F$ extends to a functor
 \[ \det: \{\mathrm{perfect\, complexes\, on\,} S\} \to \{\mathrm{invertible\,} \mathrm{sheaves\, on}\, S \}. \]
 Moreover, for any short exact sequence
 \[ 0 \to F' \to F \to F'' \to 0 \]
@@ -516,18 +502,11 @@ called the {\bf Donaldson morphism}. Moreover, since the formation of the pushfo
 \[ K(X) \xrightarrow{\la_\sE} \Pic(S) \xrightarrow{\pi^*} \Pic(S') \]
 equals $\la_{(\pi \times \id_X)^* \sE}$. Basic properties of the map $\la_\sE$ are listed in \cite[Lemma 8.1.2]{HL}.
 
-The Donaldson morphism respects numerical equivalence and hence induces homomorphism
+The Donaldson morphism respects numerical equivalence and hence a induces homomorphism
 \[ \la_\sE: \Kn(X) \to \Num(S), \]
-where $\Num(S)$ denotes $\Pic(S)$ modulo numerical equivalence, and moreover extends to a linear map
+where $\Num(S)$ denotes $\Pic(S)$ modulo numerical equivalence, and furthermore extends to a linear map
 \[ \la_\sE: \Kn(X)_\R \to \Num(S)_\R \]
 of real vector spaces, where $\Kn(X)_\R = \Kn(X) \otimes \R$, and $\Num(S)_\R = \Num(S) \otimes \R$ is the group of real divisor classes.
-
-%{\color{red} Why does $\det$ respect numerical equivalence? This means that $\la_\sE$ induces a map $\Kn(X) \to N^1(S)$. Answer: if $S$ is proper, it follows from the projection formula that 
-%\[ K(X) \to K(S), \quad v \mapsto R p_* (\sE \otimes q^* v) \]
-%respects numerical equivalence, and it follows from the Riemann-Roch theorem for curves that
-%\[ K(C) \xrightarrow{\det} \Pic(C) \]
-%sends numerically trivial classes to degree 0 line bundles. I don't know if this fact is needed here though.
-%}
 
 This construction readily generalizes to algebraic stacks, and in particular, the Donaldson morphism lets us construct line bundles on Bridgeland moduli stacks. Let $X$ be a smooth, projective variety, let $v \in \Kn(X)$ be a numerical class, and let $\si \in \Stab(X)$ be a stability condition such that the moduli stack $\sM^\si(v)$ is algebraic. Let $\sE \in D^b(\sM^\si(v) \times X)$ be an $\sM^\si(v)$-perfect object (for example $\sE$ could be the universal complex), and consider the diagram:
 \begin{center}
@@ -587,7 +566,9 @@ Next, consider the case $E \cong S_1^{\oplus r_1} \oplus \cdots \oplus S_m^{\opl
 \[ \Aut(E) \cong \GL_{r_1} \times \cdots \times \GL_{r_m}. \]
 An element $g = (g_1, \ldots, g_m) \in \Aut(E)$ acts on
 \[ H^i(X, E \otimes F) \cong H^i(X, S_1 \otimes F)^{\oplus r_1} \oplus \cdots \oplus H^i(X, S_m \otimes F)^{\oplus r_m} \]
-by a block diagonal matrix with the matrix $g_j$ on the diagonal $\dim H^i(X, S_j \otimes F)$ times. Thus, $g$ acts on $\det H^i(X, E \otimes F)$ by multiplication by
+by a block diagonal matrix with the matrix $g_j$ on the diagonal 
+\[ \dim H^i(X, S_j \otimes F) \]
+times. Thus, $g$ acts on $\det H^i(X, E \otimes F)$ by multiplication by
 \[ \det(g_1)^{\dim H^i(X, S_1 \otimes F)} \cdots \det(g_m)^{\dim H^i(X, S_m \otimes F)}, \]
 and hence on $\det R \Ga(X, E \otimes F)$ by
 \[ \det(g_1)^{\chi(X, S_1 \otimes F)} \cdots \det(g_m)^{\chi(X, S_m \otimes F)}. \]
@@ -603,7 +584,7 @@ The same analysis extends to the case where we replace $F$ by an element $u \in 
 %%%%%%%%%%%%%  NEF LINE BUNDLE  %%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{The Nef Line Bundle}
+\section{The nef line bundle}
 In \cite{BM}, the authors construct a natural numerical class of line bundles with strong positivity properties on a Bridgeland moduli space. 
 
 \subsection{Definition and positivity properties}\label{positiveLBdefandprops}
@@ -621,7 +602,9 @@ Let $(X,H)$ be a smooth, projective, polarized surface, let $\si = (\sA, Z) \in 
 \end{center}
 The Donaldson morphism
 \[ \la_\sE: K_0(X) \to \Pic(\sM^\si(v)), \quad [F] \mapsto \det R p_*(\sE \otimes q^* F) \]
-from the previous section induces a map $\la_\sE: \Kn(X)_\R \to \Num(\sM^\si(v))_\R$. Define a real divisor class on $\sM^\si(v)$ by applying the Donaldson morphism to the unique class $w_Z \in \Kn(X)_\R$ determined by the condition
+from the previous section induces a map 
+\[ \la_\sE: \Kn(X)_\R \to \Num(\sM^\si(v))_\R. \]
+Define a real divisor class on $\sM^\si(v)$ by applying the Donaldson morphism to the unique class $w_Z \in \Kn(X)_\R$ determined by the condition
 \[ \chi(w_Z, -) = \im\left(-\frac{Z(-)}{Z(v)}\right). \]
 This condition indeed defines a unique class since the Euler pairing $\chi(-,-)$ induces a perfect pairing on $\Kn(X)_\R$. Denote this numerical class by $\sL_\si \coloneqq \la_\sE(w_Z)$. The following is \cite[Lemma 3.3]{BM}, and it is the main result of the paper.
 \begin{thm}\label{BMpositivity}
@@ -712,7 +695,7 @@ This lets us define a numerical class $L_\si$ on $M^\si(v)$ by setting $L_\si = 
     By applying \cite[Theorem A.8]{AHLH} to the local rings of the finitely many points in the complement $C_\tau \setminus V$, we find a finite extension $K'$ of $K$ such that the normalization $C'$ of $C_\tau$ in $K'$ admits a map $C' \to \sM$.
 \end{proof}
 
-\subsection{Nef line bundle on the vertical wall}
+\subsection{The nef line bundle on the vertical wall}
 We can describe the class $w_Z \in \Kn(X)$ more explicitly in the case of the stability condition 
 \[ \si = (\sA, Z) = (\Coh^{\be_0}(X)[-1], -Z_{\al, \be_0}), \; \mathrm{where} \; \be_0 = \frac{H \cdot \ch_B^1(v)}{H^2 \ch_B^0}, \; \al > 0, \] that is, when $\si$ lies on the vertical wall for $v$. Recall that $H \subs X$ denotes a fixed very ample divisor. Denote $h = [\Oh_H] \in K(X)$.
 \begin{propdef}\label{nefclassonverticalwall}
@@ -725,8 +708,9 @@ Note that $Z(v)$ is a negative real number, so $w_Z$ is indeed a positive multip
 \begin{proof}
     Fix a closed point $p \in X$, and denote the numerical Todd class of $X$ by
     \[ \td_X = 1 - \frac{1}{2} K_X + \chi(\Oh_X) [p]. \]
-    We will use the Hirzebruch-Riemann-Roch formula: for $a, b \in \Kn(X)$,
-    \[ \chi(a \cdot b) = \int_X \ch(a) \ch(b) \td_X. \]
+    We will use the Hirzebruch-Riemann-Roch formula:
+    \[ \chi(a \cdot b) = \int_X \ch(a) \ch(b) \td_X \]
+    for $a, b \in \Kn(X)$.
     
     Let $a \in K(X)$ be arbitrary. To compute $\chi(a \cdot u)$, we may replace $u$ with something numerically equivalent. Now $h^2 \equiv \deg(X) [\Oh_p]$ by Bertini, and $v \cdot [\Oh_p] = \rk(v)$, so if we set
     \[ u' = - \rk(v) h + \chi(v \cdot h) [\Oh_p] \]
@@ -740,7 +724,7 @@ Note that $Z(v)$ is a negative real number, so $w_Z$ is indeed a positive multip
     and hence
     \begin{align*}
         \ch(u') & = -\rk(v) \ch(\Oh_H) + \chi(v \cdot [\Oh_H]) \ch(\Oh_p) \\
-        & = -\rk(v)\left(H - \frac{1}{2}H^2\right) + \left(\ch_1(v) \cdot H - \frac{\rk(v)}{2} H\cdot (H + K_X)\right)[p] \\
+        & = -\rk(v)\left(H - \frac{1}{2}H^2\right) + \left(\ch_1(v) \cdot H - \frac{\rk(v)}{2} H(H + K_X)\right)[p] \\
         & = -\rk(v) H + \left(\ch_1(v) \cdot H - \frac{\rk(v)}{2} H \cdot K_X\right)[p]
     \end{align*}
     Since $\ch(u')$ is in $A^{\ge 1}(X)$, we only need to know the $A^{\le 1}(X)$-part of $\ch(a)\td_X$, which is
@@ -773,11 +757,12 @@ Note that $Z(v)$ is a negative real number, so $w_Z$ is indeed a positive multip
 \end{rmk}
 
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  PROJECTIVITY OF THE GOOD MODULI SPACE  %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Projectivity of the good moduli space}
 
-\section{Projectivity of the Good Moduli Space}
 Let $(X, H)$ be a smooth, projective, polarized surface over $\C$, let $v \in \Kn(X)$ be a numerical class with $\rk(v) > 0$, and let $\si$ be a stability condition lying on the vertical wall for $\si$ considered in Section \ref{section:stabvertwall}, that is,
 \[ \si = (\sA, Z) = (\Coh^{\be_0}(X)[-1], -Z_{\al, \be_0}), \; \mathrm{where} \; \be_0 = \frac{H \cdot \ch_B^1(v)}{H^2 \ch_B^0}, \; \al > 0. \]
 Let $\sM^\si(v)$ be the stack of $\si$-semistable objects of class $v$ in $\sA$, and let $\sE$ be the universal complex on $\sM^\si(v) \times X$. In this section we prove that the good moduli space $M^\si(v)$ of the stack $\sM^\si(v)$ is projective. 
@@ -885,9 +870,7 @@ The proof of the following simple lemma as well as part of the proof of Proposit
     \begin{align*}
         w - w(-a) & = w \cdot [\Oh_C] \\
         & = (-\chi(v \cdot h \cdot [\Oh_C]) \cdot 1 + \chi(v \cdot [\Oh_C]) \cdot h) (a h - \binom{a}{2} h^2) \\
-        & = - \chi(v \cdot ah^2) \cdot (a h - \binom{a}{2} h^2) + \chi\left(v \cdot (a h - \binom{a}{2} h^2)\right) \cdot a h^2 \\
-        %& = - a^2 \chi(v \cdot h^2) h + a \binom{a}{2} \chi(v \cdot h^2) h^2 \\
-        %& \qquad + a^2 \chi(v \cdot h) h^2 - a \binom{a}{2} \chi(v \cdot h^2) h^2 \\
+        & = - \chi(v \cdot ah^2) (a h - \binom{a}{2} h^2) + \chi\left(v \cdot (a h - \binom{a}{2} h^2)\right) a h^2 \\
         & = a^2 ( - \chi(v \cdot h^2) h + \chi(v \cdot h) h^2) = a^2 u.
     \end{align*}
     For the second claim, we note that 
@@ -905,7 +888,7 @@ Our next task is to show that the construction of Proposition \ref{nefpowerfromc
 \begin{lem}\label{restsingle} 
     Let $X$ be a smooth, projective surface and $C \subs X$ a smooth, projective curve. Assume $E \in D^b(X)$ fits in a triangle
     \[ F \to E \to T[-1], \]
-    where $F$ is a torsion-free sheaf and $T$ is a torsion sheaf with 0-dimensional support. The derived restriction $E|_C^\LL$ fits in a triangle
+    where $F$ is a torsion-free sheaf and $T$ is a torsion sheaf with 0-di\-men\-sion\-al support. The derived restriction $E|_C^\LL$ fits in a triangle
     \[ \sH^0(E|_C^\LL) \to E|_C^\LL \to \sH^1(E|_C^\LL)[-1] \]
     in $D^b(C)$, where $\sH^1(E|_C^\LL)$ is a torsion sheaf.
 \end{lem}
@@ -929,35 +912,6 @@ We now return to the triangle
 at the beginning of the proof. Taking into account the shift in the last term, we obtain an exact sequence of cohomology sheaves
 \[ 0 \to F|_C \to \sH^0(E|_C^\LL) \to \sH^{-1}(T|_C^\LL) \to 0 \to \sH^1(E|_C^\LL) \to \sH^0(T|_C^\LL) \to 0, \]
 and also see that $\sH^i(E|_C^\LL) = 0$ if $i \neq 0,1$. In particular, $E|_C^\LL$ is supported in degrees $0$ and $1$, and $\sH^1(E|_C^\LL) \cong \sH^0(T|_C^\LL)$ is a torsion sheaf on $C$.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% Old version of the proof %%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\iffalse To understand the terms in this sequence, we first study restriction of a sheaf $\sT \in \Coh(X)$ supported at single closed point $p \in X$. If $C$ does not contain $p$, then clearly $\sT|_C^\LL = 0$. Next, if $\sT = \Oh_p$ is the structure sheaf of a closed point $p \in C$ with its reduced structure, since $p$ is a smooth point of $X$, we can locally resolve $\sT$ by a complex
-\[ \Oh_{X,p} \xrightarrow{\left(\begin{smallmatrix}-g\\f\end{smallmatrix}\right)} \Oh_{X,p}^{\oplus 2} \xrightarrow{\left(\begin{smallmatrix}f&g\end{smallmatrix}\right)} \Oh_{X,p}, \]
-where $f$ is a generator of the ideal of $C$ in $\Oh_{X,p}$. Tensoring with $\Oh_{X,p}/(f) = \Oh_{C,p}$ yields
-\[ \Oh_{C,p} \xrightarrow{\left(\begin{smallmatrix}-\overline{g}\\0\end{smallmatrix}\right)} \Oh_{C,p}^{\oplus 2} \xrightarrow{\left(\begin{smallmatrix}0&\overline{g}\end{smallmatrix}\right)} \Oh_{C,p}. \]
-Now $f, g \in \Oh_{X,p}$ are a regular sequence, so $\overline{g} \in \Oh_{C,p}$ is a non-zero-divisor. Thus, the last complex has a nonzero cohomology sheaf isomorphic to $\Oh_p$ at degrees $0$ and $-1$ and no cohomology in other degrees. In particular, $\sT|_C^\LL$ has nonzero cohomology sheaves precisely in degrees $0$ and $-1$.
-
-Next, any coherent sheaf $\sT$ supported at a single closed point $p \in X$ is an iterated extension of the sheaf $\Oh_p$ by itself, so induction on the length of $\sT$ and the long exact sequence of cohomology sheaves shows that $\sT|_C^\LL$ has nonzero cohomology only in degrees $0$ and $-1$. Finally, if $\sT$ is any coherent sheaf supported at finitely many closed points, we can cover $X$ by affine opens, each containing one point of $\Supp \sT$. Repeating the argument on these affines we again see that $\sT|_C^\LL$ is supported in degrees $0$ and $-1$.
-
-We now consider the derived restriction of the torsion-free sheaf $\sF$ from the above triangle. If $\sG$ denotes the double dual $\sF^{\vee\vee}$, we have an exact sequence
-\[ 0 \to \sF \to \sG \to \sT \to 0, \]
-where, since $X$ is a smooth surface, $\sG$ is locally free and $\sT$ is supported in dimension 0. Taking the derived restriction to $C$ gives a triangle
-\[ \sF|_C^\LL \to \sG|_C^\LL \to \sT|_C^\LL. \]
-Since $\sG$ is a locally free sheaf, so is $\sG|_C^\LL$. Moreover, we found above that $\sH^i(\sT|_C^\LL) = 0$ if $i \neq 0,-1$. We now see from the long exact sequence of cohomology sheaves that $\sH^i(\sF|_C^\LL) = 0$ if $i \neq 0$, and $\sH^0(\sF|_C^\LL) = \sF|_C$ fits in an exact sequence
-\[ 0 \to \sH^{-1}(\sT|_C^\LL) \to \sF|_C \to \sG|_C \to \sH^0(T|_C^\LL) \to 0. \]
-
-We now return to the triangle
-\[ F|_C^\LL \to E|_C^\LL \to T|_C^\LL[-1] \]
-at the beginning of the proof. Taking into account the shift in the last term, we obtain an exact sequence of cohomology sheaves
-\[ 0 \to F|_C \to \sH^0(E|_C^\LL) \to \sH^{-1}(T|_C^\LL) \to 0 \to \sH^1(E|_C^\LL) \to \sH^0(T|_C^\LL) \to 0, \]
-and also see that $\sH^i(E|_C^\LL) = 0$ if $i \neq 0,1$. In particular, $E|_C^\LL$ is supported in degrees $0$ and $1$, and $\sH^1(E|_C^\LL) \cong \sH^0(T|_C^\LL)$ is a torsion sheaf on $C$.
-\fi
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% Old version end %%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{proof}
 
 \begin{lem}\label{hypercohovanishing}
@@ -1079,252 +1033,11 @@ We will now use Proposition \ref{globalgen} to prove that the line bundle $\la_\
     Now $M^\si(v)$ is proper by Theorem \ref{gmsexists}, hence the map $\pi$ is proper. Thus, by Zariski's Main Theorem, $\pi$ is in particular quasi-finite, hence representable by schemes, see \cite[Chapter II, Theorem 6.15]{knutson} or \cite[\href{https://stacks.math.columbia.edu/tag/082J}{Tag 082J}]{stacks-project}. Thus, $M^\si(v)$ is in particular a scheme. Moreover, $\pi: M^\si(v) \to \p^n$ is finite, hence $L$ is ample, and we conclude that $M^\si(v)$ is projective.
 \end{proof}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%% Below is an earlier version with the unnecessary "finite type $\C$-scheme $S$"
-
-\iffalse
-\section{Projectivity of the Good Moduli Space}
-Let $(X, H)$ be a smooth, projective, polarized surface over $\C$, let $v \in \Kn(X)$ be a numerical class with $\rk(v) > 0$, and let $\si = (\sA, Z)$ be a stability condition lying on the vertical wall for $\si$ considered in section \ref{section:stabvertwall}. In this section we prove that the good moduli space $M^\si(v)$ of the stack $\sM^\si(v)$ is projective. Recall that $\sL_\si$ denotes the natural positive line bundle on $\sM^\si(v)$ and $L_\si$ the corresponding line bundle on $M^\si(v)$. 
-
-Our strategy is to show that $L_\si$ is ample. Since by Lemma \ref{nefdescendtogms}, $L_\si$ is strictly positive on any complete curve in $M^\si(v)$, it suffices to show that $L_\si$ is semiample, meaning that some tensor power is globally generated. Since by Proposition \ref{vbtogms}, sections of $\sL_s$ descend to sections of $L_\si$, it suffices to show that $\sL_\si$ is semiample. To produce sections of $\sL_\si$, we expand on techniques used in \cite{li} for constructing a scheme structure on the Uhlenbeck compactification, and in \cite{seshadri} for constructing moduli spaces of vector bundles on a curve. 
-
-The idea is as follows. Let $\sE$ denote the universal complex on $\sM^\si(v) \times X$ and consider the diagram
-\begin{center}
-    \begin{tikzpicture}
-    \matrix (m) [matrix of math nodes, row sep=1em, column sep=1em]
-    { & \sM^\si(v) \times X & \\
-    \sM^\si(v) & & X \\};
-    \path[->] 
-    (m-1-2) edge node[auto,swap] {$ p $} (m-2-1)
-    (m-1-2) edge node[auto] {$ q $} (m-2-3)
-    ;
-    \end{tikzpicture}
-\end{center}
-as before. If $t \in \sM^\si(v)$ is a $\C$-point, the complex $\sE_t$ on $\{t\} \times X = X$ fits in an exact triangle
-\[ F \to \sE_t \to T[-1] \]
-in $D^b(X)$, where $F$ is a $\mu$-semistable torsion-free sheaf and $T$ is a torsion sheaf with 0-dimensional support. We first find a smooth curve $C \subs X$ in the linear system $|a H|$ for some $a > 0$ with the property that (1) $C$ avoids the support of $T$, and (2) the restriction $F|_C = \sE_t|_C$ to $C$ is slope-semistable. Next, we use a result of Seshadri to find a locally free sheaf $G$ on $C$ with the property that 
-\[ H^0(C, F|_C \otimes G) = H^1(C, F|_C \otimes G) = 0. \]
-Finally, by using properties of determinantal line bundles and by analyzing the restriction of an arbitrary $\si$-semistable object $E \in D^b(X)$ of class $v$ to the curve $C$, we show that the line bundle $\det(R p_*(\sE|_{\sM^\si(v) \times C} \otimes q^*G))$ is a positive multiple of $\sL_\si$ on $\sM^\si(v)$ and has a global section that does not vanish at the point $t$. 
-
-\subsection{Restriction to curves}
-
-\subsubsection{Restricting a semistable object}
-Let $E \in D^b(X)$ be an object that fits in a triangle
-\[ F \to E \to T[-1], \]
-where $F$ is a torsion-free sheaf, and $T$ is a torsion sheaf supported in dimension 0. By Proposition \ref{ss-object-vertical-classification} this holds when $E$ is $\si$-semistable of class $v$, in which case $F$ is moreover $\mu$-semistable. We wish to understand the derived restriction of $E$ to a smooth curve $C \subs X$ in the linear system $|a H|$ for some $a > 0$.
-
-\begin{lem}\label{restsingle} Let $(X, H)$, be a smooth, projective, polarized surface, and $C \subs X$ a smooth curve in the linear system $|a H|$ for some $a > 0$. Assume $E \in D^b(X)$ fits in a triangle
-\[ F \to E \to T[-1], \]
-where $F$ is a torsion-free sheaf and $T$ is a torsion sheaf with 0-dimensional support. The derived restriction $E|_C^\LL$ fits in a triangle
-\[ \sH^0(E|_C^\LL) \to E|_C^\LL \to \sH^1(E|_C^\LL)[-1] \]
-in $D^b(C)$, where $\sH^1(E|_C^\LL)$ is a torsion sheaf.
-\end{lem}
-\begin{proof}
-Derived restriction to $C$ is a functor of triangulated categories, so we obtain a triangle
-\[ F|_C^\LL \to E|_C^\LL \to T|_C^\LL[-1], \]
-which yields a long exact sequence of cohomology sheaves
-\[ \cdots \to \sH^i(F|_C^\LL) \to \sH^i(E|_C^\LL) \to \sH^i(T|_C^\LL[-1]) \to \sH^{i+1}(F|_C^\LL) \to \cdots. \]
-To understand the terms in this sequence, we study the derived restrictions $F|_C^\LL$ and $T|_C^\LL$. Since pushforward of coherent sheaves along the inclusion $C \hookrightarrow X$ is exact, we may as well study the derived tensor products $F \otimes^\LL \Oh_C$ and $T \otimes^\LL \Oh_C$, where $\Oh_C$ is the structure sheaf of $C$ viewed as an $\Oh_X$-module. 
-
-Now $\Oh_C$ has a resolution by line bundles
-\[ 0 \to \Oh_X(-a) \xrightarrow{f} \Oh_X \to \Oh_C \to 0, \]
-where $f \in H^0(X,\Oh_X(a))$ is a section corresponding to $C$. Thus, the objects $F \otimes^\LL \Oh_C$ and $T \otimes^\LL \Oh_C$ are represented by the complexes
-\[ \sF_\bullet = [F(-a) \xrightarrow{f} F] \qquad \mathrm{and} \qquad \sT_\bullet = [T(-a) \xrightarrow{f} T] \]
-respectively, where $F$ and $T$ are placed in degree 0. 
-
-Since $F$ is by assumption torsion-free, the section $f$ acts on $F$ as a non-zero divisor. Thus, we see that $\sH^0(F|_C^\LL) = \sH^0(\sF_\bullet) = F|_C$ agrees with the ordinary restriction, and $\sH^i(F|_C^\LL) = \sH^i(\sF_\bullet) = 0$ for $i \neq 0$. Moreover, from $\sT_\bullet$ we see that $\sH^{-1}(T|_C^\LL) = \sH^{-1}(\sT_\bullet)$ is a subsheaf of $T(-a) \cong T$, and $\sH^0(T|_C^\LL) = \sH^0(\sT_\bullet)$ is a quotient of $T$, hence both are 0-dimensional, and $\sH^i(T|_C^\LL) = 0$ for $i \neq -1, 0$.
-
-We now return to the triangle
-\[ F|_C^\LL \to E|_C^\LL \to T|_C^\LL[-1] \]
-at the beginning of the proof. Taking into account the shift in the last term, we obtain an exact sequence of cohomology sheaves
-\[ 0 \to F|_C \to \sH^0(E|_C^\LL) \to \sH^{-1}(T|_C^\LL) \to 0 \to \sH^1(E|_C^\LL) \to \sH^0(T|_C^\LL) \to 0, \]
-and also see that $\sH^i(E|_C^\LL) = 0$ if $i \neq 0,1$. In particular, $E|_C^\LL$ is supported in degrees $0$ and $1$, and $\sH^1(E|_C^\LL) \cong \sH^0(T|_C^\LL)$ is a torsion sheaf on $C$.
-
-\iffalse To understand the terms in this sequence, we first study restriction of a sheaf $\sT \in \Coh(X)$ supported at single closed point $p \in X$. If $C$ does not contain $p$, then clearly $\sT|_C^\LL = 0$. Next, if $\sT = \Oh_p$ is the structure sheaf of a closed point $p \in C$ with its reduced structure, since $p$ is a smooth point of $X$, we can locally resolve $\sT$ by a complex
-\[ \Oh_{X,p} \xrightarrow{\left(\begin{smallmatrix}-g\\f\end{smallmatrix}\right)} \Oh_{X,p}^{\oplus 2} \xrightarrow{\left(\begin{smallmatrix}f&g\end{smallmatrix}\right)} \Oh_{X,p}, \]
-where $f$ is a generator of the ideal of $C$ in $\Oh_{X,p}$. Tensoring with $\Oh_{X,p}/(f) = \Oh_{C,p}$ yields
-\[ \Oh_{C,p} \xrightarrow{\left(\begin{smallmatrix}-\overline{g}\\0\end{smallmatrix}\right)} \Oh_{C,p}^{\oplus 2} \xrightarrow{\left(\begin{smallmatrix}0&\overline{g}\end{smallmatrix}\right)} \Oh_{C,p}. \]
-Now $f, g \in \Oh_{X,p}$ are a regular sequence, so $\overline{g} \in \Oh_{C,p}$ is a non-zero-divisor. Thus, the last complex has a nonzero cohomology sheaf isomorphic to $\Oh_p$ at degrees $0$ and $-1$ and no cohomology in other degrees. In particular, $\sT|_C^\LL$ has nonzero cohomology sheaves precisely in degrees $0$ and $-1$.
-
-Next, any coherent sheaf $\sT$ supported at a single closed point $p \in X$ is an iterated extension of the sheaf $\Oh_p$ by itself, so induction on the length of $\sT$ and the long exact sequence of cohomology sheaves shows that $\sT|_C^\LL$ has nonzero cohomology only in degrees $0$ and $-1$. Finally, if $\sT$ is any coherent sheaf supported at finitely many closed points, we can cover $X$ by affine opens, each containing one point of $\Supp \sT$. Repeating the argument on these affines we again see that $\sT|_C^\LL$ is supported in degrees $0$ and $-1$.
-
-We now consider the derived restriction of the torsion-free sheaf $\sF$ from the above triangle. If $\sG$ denotes the double dual $\sF^{\vee\vee}$, we have an exact sequence
-\[ 0 \to \sF \to \sG \to \sT \to 0, \]
-where, since $X$ is a smooth surface, $\sG$ is locally free and $\sT$ is supported in dimension 0. Taking the derived restriction to $C$ gives a triangle
-\[ \sF|_C^\LL \to \sG|_C^\LL \to \sT|_C^\LL. \]
-Since $\sG$ is a locally free sheaf, so is $\sG|_C^\LL$. Moreover, we found above that $\sH^i(\sT|_C^\LL) = 0$ if $i \neq 0,-1$. We now see from the long exact sequence of cohomology sheaves that $\sH^i(\sF|_C^\LL) = 0$ if $i \neq 0$, and $\sH^0(\sF|_C^\LL) = \sF|_C$ fits in an exact sequence
-\[ 0 \to \sH^{-1}(\sT|_C^\LL) \to \sF|_C \to \sG|_C \to \sH^0(T|_C^\LL) \to 0. \]
-
-We now return to the triangle
-\[ F|_C^\LL \to E|_C^\LL \to T|_C^\LL[-1] \]
-at the beginning of the proof. Taking into account the shift in the last term, we obtain an exact sequence of cohomology sheaves
-\[ 0 \to F|_C \to \sH^0(E|_C^\LL) \to \sH^{-1}(T|_C^\LL) \to 0 \to \sH^1(E|_C^\LL) \to \sH^0(T|_C^\LL) \to 0, \]
-and also see that $\sH^i(E|_C^\LL) = 0$ if $i \neq 0,1$. In particular, $E|_C^\LL$ is supported in degrees $0$ and $1$, and $\sH^1(E|_C^\LL) \cong \sH^0(T|_C^\LL)$ is a torsion sheaf on $C$.
-\fi
-\end{proof}
-
-Assume now that $E \in \sA$ is a $\si$-semistable object of class $v$. We can find a curve $C \in |a H|$ such that the restriction of $E$ to $C$ is a slope-semistable sheaf.
-\begin{lem}\label{restsemistable}
-    If $E \in \sA \subs D^b(X)$ is any $\si$-semistable object of class $v$, there exists a smooth, projective, connected curve $C \subs X$ in the linear system $|a H|$ for $a \gg 0$ such that the derived restriction of $E$ to $C$ is a slope-semistable locally free sheaf.    
-\end{lem}
-\begin{proof} 
-We use Flenner's restriction theorem, \cite[Theorem 7.1.1]{HL}. Specialized to the case at hand, it states the following. Let $a$ be an integer satisfying
-\[ \frac{\binom{a+2}{a} - a - 1}{a} = \frac{a+1}{2} > \deg(X) \cdot \max\left\{\frac{r^2 - 1}{4}, 1\right\}. \]
-If $F$ is a $\mu$-semistable sheaf of rank $r = \rk(v)$, then there is a nonempty open subset $U$ in the complete linear system $|aH|$, such that every $C \in U$ is smooth and the restriction of $F$ to $C$ is semistable. 
-
-Now let $E \in D^b(X)$ be a $\si$-semistable object of class $v$ fitting in an exact triangle
-\[ F \to E \to T[-1] \]
-as before. For any smooth curve $C \subs X$, derived restriction to $C$ gives an exact triangle
-\[ F|_C^\LL \to E|_C^\LL \to T|_C^LL[-1]. \]
-If $C$ does not pass through the finitely many closed points $p_1,\ldots,p_m$ in the support of $T$, then $T|_C^\LL = 0$, and thus $F|_C^\LL \cong E|_C^\LL$. Now for each point $p_i$, the subset in $|a H|$ of curves not passing through $p_i$ is a nonempty open subset $U_i \subs |a H|$. Since $|a H|$ is irreducible, the intersection $U' = U \cap U_1 \cap \cdots \cap U_m$ is also nonempty, and any curve $C \in U'$ has the desired property. 
-\end{proof}
-
-\subsubsection{Restricting a family of semistable objects}
-We now turn to restricting a family of semistable objects to a curve. Let $S$ be a finite type $\C$-scheme, and let $S \xrightarrow{\sE} \sM^\si(v)$ be a morphism corresponding to $\sE \in D^b(S \times X)$. Denote the projections by $p_X: S \times X \to S$ and $q_X: S \times X \to X$. Let $C \subs X$ be a smooth, projective, connected curve, let $p_C: S \times C \to S$ and $q_C: S \times C \to C$ be the projections, and denote by $\sE_C$ the derived restriction of $\sE$ to the closed subscheme $S \times C \subs S \times X$.
-
-\begin{lem}\label{restfamily}
-For any locally free sheaf $F$ on $C$, the cohomology of the complex $R p_{C*} (\sE_C \otimes q_C^*F)$ is supported in degrees $0$ and $1$.
-\end{lem}
-\begin{proof}
-Since $\sE_C$ is perfect relative to $S$ and $q_C^*F$ is locally free, also $\sG = \sE_C \otimes q_C^*F$ is perfect relative to $S$, and thus $R p_{C*} \sG$ is perfect and universally computes derived pushforward by \cite[\href{https://stacks.math.columbia.edu/tag/0B91}{Tag 0B91}]{stacks-project}. By Cohomology and Base Change, to show that $R^i \pi_* \sG = 0$ when $i \neq 0, 1$, it suffices to show that for any closed point $t \in S$, the hypercohomology $\Hh^i(C, \sG|_{C_t}^\LL)$ of the restriction of $\sG$ to the fiber over $t$ vanishes when $i \neq 0,1$.
-
-Fix a closed point $t \in S$ and denote $G = \sG|_{C_t}^\LL$ and $E = \sE_C|_{C_t}^\LL$. Since $F$ is locally free, we have
-\begin{equation}\label{tensorcoho}
-    G = E \otimes F, \quad \mathrm{and} \quad \sH^i(G) = \sH^i(E) \otimes F \quad \mathrm{for\;all\;} i.
-\end{equation}
-By Lemma \ref{restsingle}, $E$ fits in a triangle
-\[ \sH^0(E) \to E \to \sH^1(E)[-1], \]
-where $\sH^1(E)$ is a torsion sheaf, and by (\ref{tensorcoho}) the same is true for $G$. This yields a long exact sequence
-\[ \cdots \to \Hh^i(C, G) \to \Hh^i(C, \sH^1(G)[-1]) \to \Hh^{i+1}(C, \sH^0(G)) \to \cdots. \] % \to \Hh^i(C, \sH^0(G))
-Since $\Hh^i(C, \sH^0(G)) = 0$ whenever $i \neq 0, 1$, and 
-\[ \Hh^i(C, \sH^1(G)[-1]) = \Hh^{i-1}(C, \sH^1(G)) = 0 \] 
-whenever $i \neq 1$, the group $\Hh^i(C, G)$ can be zero only if $i = 0,1$, and these two groups fit in exact sequences
-\[ 0 \to \Hh^0(C, \sH^0(G)) \to \Hh^0(C, G) \to 0 \] 
-and
-\[ 0 \to \Hh^1(C, \sH^0(G)) \to \Hh^1(C, G) \to \sH^0(C,\sH^1(G)) \to 0. \]
-\end{proof}
-
-
-\subsection{Global generation and projectivity}
-In this section we prove that some positive multiple of the line bundle $\sL_\si$ on $\sM^\si(v)$ is globally generated, and from this deduce that the good moduli space $M^\si(v)$ is projective.
-\subsubsection{Nef line bundle via restricting to curves}
-Let $S$ be a scheme of finite type over $\C$, and let $\sE \in D^b(S \times X)$ be perfect relative to $S$. Let $C \subs X$ be a smooth curve in the linear system $|aH|$ for some $a > 0$, and consider the diagram 
-\begin{center}
-    \begin{tikzpicture}
-    \matrix (m) [matrix of math nodes, row sep=4em, column sep=4em]
-    { S & S \times X & S \times C  \\
-    & X & C \\};
-    \path[->] 
-    (m-1-2) edge node[auto] {$ p_X $} (m-1-1)
-    (m-1-3) edge node[auto] {$ j $} (m-1-2)
-    (m-1-3) edge[bend right] node[auto,swap] {$ p_C $} (m-1-1)
-    (m-1-2) edge node[auto] {$ q_X $} (m-2-2)
-    (m-1-3) edge node[auto,swap] {$ q_C $} (m-2-3)
-    (m-2-3) edge node[auto,swap] {$ i $} (m-2-2)
-    ;        
-    \end{tikzpicture}
-\end{center}
-where $p_X, p_C, q_X, q_C$ denote the projections, and $i$ and $j$ are closed embeddings. Let $\sE_C \coloneqq j^*\sE$ be the restriction of $\sE$ to $S \times C$, which is still perfect relative to $S$. We have the Donaldson homomorphisms
-\[ \la_\sE: K(X) \to \Pic(S), \qquad \la_{\sE_C}: K(C) \to \Pic(S). \]
-Also, for any $n \in \Z$, we have a map $K(X) \to K(X), w \mapsto w(n)$ induced by the map on locally free sheaves $F \mapsto F(n) = F \otimes \Oh_X(n)$. Similarly we a have map $K(X) \to K(C), w \mapsto w|_C$ induced by $F \mapsto F|_C = i^*F$.
-\begin{lem}
-    If $w \in K(X)$, then
-    \[ \la_\sE(w - w(-a)) = \la_{\sE_C}(w|_C). \]
-\end{lem}
-\begin{proof}
-    Both sides of the equation are linear in $w$, so it suffices to consider the class $w = [F]$ for a locally free sheaf $F$ on $X$. On the one hand, we have
-    \begin{align*}
-        \la_{\sE_C}(w|_C) & = \det R p_{C*}(\sE_C \otimes q_C^* i^* F) \\
-        & = \det R p_{X*} j_*(\sE_C \otimes j^* q_X^* F) \\
-        & = \det R p_{X*} (j_*\sE_C \otimes q_X^* F). \\
-    \end{align*}
-    On the other hand, pulling back the short exact sequence 
-    \[ 0 \to \Oh_X(-a) \to \Oh_X \to j_* \Oh_C \to 0 \]
-    along $q_X$, tensoring with $\sE \otimes q_X^* F$, and applying $R p_{X*}$ gives the exact triangle
-    \[ R p_{X*} (\sE \otimes q_X^*(F \otimes \Oh_X(-a))) \to R p_{X*} (\sE \otimes q_X^*F) \to R p_{X*} (j_* \sE_C \otimes q_X^*F) \]
-    in $D^b(S)$, hence an isomorphism
-    \[ \det R p_{X*} (j_* \sE_C \otimes q_X^*F) \cong \la_\sE(F) \otimes \la_\sE(F(-a))^\vee = \la_\sE(w - w(-a)). \]
-\end{proof}
-
-Assume now that $\sE$ is a family of $\si$-semistable objects of class $v$, and recall that we obtain a line bundle on $\la_\sE(u)$ on $S$ which is the pullback of a nef line bundle on $\sM^\si(v)$, where 
-\[ u = -\chi(v \cdot h^2) h + \chi(v \cdot h) h^2. \]
-Here $h = [\Oh_H] \in K(X)$ as before. Define
-\[ w = -\chi(v \cdot h \cdot [\Oh_C]) \cdot 1 + \chi(v \cdot [\Oh_C]) \cdot h \in K(X). \]
-\begin{lem}
-    \[ w - w(-a) = a^2 u. \]
-\end{lem}
-\begin{proof}
-    Since $[\Oh_X(-1)] = 1 - h \in K(X)$, we have
-    \[ [\Oh_X(-a)] = [\Oh_X(-1)]^a = (1 - h)^a = 1 - a h + \binom{a}{2} h^2, \]
-    so the short exact sequence
-    \[ 0 \to \Oh_X(-a) \to \Oh_X \to \Oh_C \to 0 \]
-    gives $[\Oh_C] = 1 - [\Oh_X(-a)] = a h - \binom{a}{2} h^2$. In particular, $h \cdot [\Oh_C] = a h^2$. We now calculate
-    \begin{align*}
-        w - w(-a) & = w \cdot [\Oh_C] \\
-        & = (-\chi(v \cdot h \cdot [\Oh_C]) \cdot 1 + \chi(v \cdot [\Oh_C]) \cdot h) (a h - \binom{a}{2} h^2) \\
-        & = - \chi(v \cdot h \cdot ah) \cdot (a h - \binom{a}{2} h^2) + \chi\left(v \cdot (a h - \binom{a}{2} h^2)\right) \cdot a h^2 \\
-        & = - a^2 \chi(v \cdot h^2) h + a \binom{a}{2} \chi(v \cdot h^2) h^2 \\
-        & \qquad + a^2 \chi(v \cdot h) h^2 - a \binom{a}{2} \chi(v \cdot h^2) h^2 \\
-        & = a^2 ( - \chi(v \cdot h^2) h + \chi(v \cdot h) h^2) \\
-        & = a^2 u.
-    \end{align*}
-\end{proof}
-By the previous two lemmas, we now have $\la_\sE(u)^{a^2} = \la_{\sE_C}(w|_C)$. Note that 
-\[ -w|_C = \chi(v|_C \cdot h|_C) \cdot 1 - \chi(v|_C) \cdot h|_C = a \rk(v) \deg X \cdot 1 - \chi(v|_C) \cdot h|_C, \]
-and $a \rk(v) \deg X > 0$, and $\rk(h|_C) = 0$. Since $C$ is smooth and projective, we have an isomorphism $K(C) \cong \Z \oplus \Pic(C)$ induced by $F \mapsto (\rk F, \det F)$ for a locally free sheaf $F$. Moreover, any class $(m, L) \in \Z \oplus K(C)$ with $m > 0$ can be represented by a locally free sheaf: take for instance $F = \Oh_C^{\oplus m-1} \oplus L$. Thus, in particular there exist locally free sheaves $F$ of class $-m w|_C$ on $C$ for any $m \in \N$, and so
-\[ \la_\sE(u)^{m a^2} = \la_{\sE_C}(-m w|_C) = \la_{\sE_C}(F)^\vee. \]
-
-We claim that for such $F$, the line bundle $\la_{\sE_C}(F)^\vee$ has a canonical section $\de_F$. For this we check the conditions of Lemma \ref{detsection} (a). For any $t \in S$, the object $\sE_C|_{C_t}^\LL$ has class $v|_C$, and
-\begin{align*} 
-    \chi(v|_C \cdot [F]) & = \chi(v|_C \cdot (-m w|_C)) \\
-    &= m \chi(v|_C \cdot(\chi(v|_C \cdot h|_C) \cdot 1 - \chi(v|_C) \cdot h|_C)) \\
-    & = m (\chi(v|_C \cdot h|_C) \chi(v|_C)  - \chi(v|_C) \chi(v|_C \cdot h|_C)) = 0,
-\end{align*}
-so the second condition holds. Moreover, by the proof of Lemma \ref{restfamily}, we have $\Hh^i(X_t, \sE_t \otimes F) = 0$ for $i \neq 0,1$. 
-
-In conclusion, $a > 0$, any smooth curve in the linear system $C \in |aH|$, and any $m \ge 1$, there exist locally free sheaves $F$ on $C$ with the property that $\la_{\sE_C}(F)^\vee \cong \la_\sE(u)^{m a^2}$, and there is a canonical section $\de_F \in \Ga(S, \la_\sE(u)^{m a^2})$. 
-
-\subsubsection{Nonvanishing of sections}
-To prove our main theorem, we recall the following result of Seshadri \cite[Lemma 3.1, Remark 3.2]{seshadri}.
-\begin{lem}\label{seshadrimainlemma}
-    Let $C$ be a smooth, projective curve of genus $g \ge 2$, and let $F$ be a slope-semistable locally free sheaf on $F$. Let $r, d$ be integers such that
-    \[ r \deg F + (d + r(1-g)) \rk F = 0. \]
-    If $r$ is large enough, then for any line bundle $\sL$ of degree $d$, there exists a locally free sheaf $E$ with $\rk E = E$ and $\det E \cong \sL$, and
-    \[ H^0(C, E \otimes F) = H^1(C, E \otimes F) = 0. \]
-\end{lem}
-We now put everything together to prove our main result.
-\begin{thm}\label{projectivity}
-    Let $\sE_\si$ denote the universal complex on $\sM^\si(v) \times X$, let $M^\si(v)$ be the good moduli space of $\sM^\si(v)$, and let $u \in K(X)$ be as in Proposition \ref{nefclassonverticalwall}.
-    \begin{enumerate}[(a)]
-        \item The line bundle $\la_{\sE_\si}(u)$ on $\sM^\si(v)$ descends to a semiample line bundle on $M^\si(v)$.
-        \item The good moduli space $M^\si(v)$ is a projective scheme.
-    \end{enumerate}
-\end{thm}
-\begin{proof}
-    \begin{enumerate}[(a)]
-        \item Let $E_0 \in \sA$ be a $\si$-semistable object of class $v$. By Lemma \ref{restsemistable}, we can find a smooth, projective curve $C \in |aH|$ of genus $g \ge 2$ for some $a > 0$ such that $E' = E_0|_C^\LL$ is a slope-semistable locally free sheaf. Recall that if 
-        \[ w = -\chi(v \cdot h \cdot [\Oh_C]) \cdot 1 + \chi(v \cdot [\Oh_C]) \cdot h, \]
-        then $\la_\sE(u)^{a^2} = \la_{\sE_C}(w|_C)$. By Lemma \ref{seshadrimainlemma}, if $m$ is sufficiently large, we can find a locally free sheaf $F$ on $C$ of class $-m w|_C$ such that
-        \[ H^0(C, E' \otimes F) = H^1(C, E' \otimes F) = 0. \]
-        If $\sE \in D^b(S \times X)$ is a family of $\si$-semistable objects of class $v$ parameterized by a scheme $S$ such that $\sE_t \cong E_0$ for some $t \in S$, then by Lemma \ref{detsection} (b), the canonical section $\de_F$ of $\la_{\sE_C}(F)^\vee = \la_{\sE_C}(m w|_C) = \la_\sE(u)^{m a^2}$ is nonzero at $t$. These sections for all $S$ and all $\sE$ glue to a global section of $\la_{\sE_\si}(u)^{a m^2})$. 
-        
-        Since $\sM$ is quasicompact, there exists a single $N$ such that the line bundle $\la_{\sE_\si}(u)^N$ is generated by finitely many global sections. By Lemma \ref{nefdescendtogms} and the equivalence of categories of Proposition \ref{vbtogms}, the line bundle $\la_{\sE_\si}(u)^N$ and the generating sections descend to a line bundle $L$ and generating sections $\si_0,\ldots,\si_n \in \Ga(M, L)$ on the good moduli space $M$. 
-        
-        \item The sections $\si_0, \ldots, \si_n \in \Ga(M^\si(v), L)$ give a morphism $\pi: M^\si(v) \to \p^n$. Since $M^\si(v)$ is proper, the map $\pi$ is proper, and by Lemma \ref{gmsnef}, it has finite fibers. Thus, $\pi$ is in particular quasi-finite, hence representable by schemes by \cite[Theorem 7.2.10]{olsson}. Thus, $M^\si(v)$ is a scheme, and $\pi: M^\si(v) \to \p^n$ is finite, hence $L$ is ample, and thus $M^\si(v)$ is projective.
-    \end{enumerate}
-\end{proof}
-\fi
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  RELATIONSHIP TO GIESEKER AND UHLENBECK  %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Relationship to Gieseker and Uhlenbeck Moduli Spaces}
+\section{Relationship to the Uhlenbeck compactification}
 In this section we describe a bijective morphism $\Phi: M^{\mathrm{Uhl}}(v) \to M^\si(v)$ from the Uhlenbeck compactification of $\mu$-stable locally free sheaves to the good moduli space of $\si$-semistable objects, where $v \in \Kn(X)$ is a class of positive rank and $\si \in \Stab(X)$ lies on the vertical wall for $v$. To describe some context, let us consider the following diagram.
 
 \begin{center}
@@ -1387,38 +1100,7 @@ As observed in \cite{LQ}, it follows from the classification of polystable objec
     in $\sA$. Now $F^{\vee\vee}$ is a $\mu$-polystable locally free sheaf, and in the Jordan-H\"older filtration of $T[-1]$ with respect to $\si$, the object $\Oh_p[-1]$ appears as a factor exactly $l_p(T)$ times for each $p \in X$. Thus, the $\si$-polystable object corresponding to $F$ is
     \[ F^{\vee\vee} \oplus \left(\bigoplus_{p \in X} \Oh_p^{\oplus l_p(T)}[-1] \right). \]
     From this description it is clear that two $\mu$-polystable sheaves map to the same point in $M^\si(v)$ if and only if they map to the same point in $M^{\mathrm{Uhl}}(v)$.
-    
-    
 \end{proof} 
-
-%\subsection{Random thought (to be removed later (unless it works out))}
-%It would be amazing to prove projectivity of the Gieseker moduli space without GIT, using Bridgeland stability instead. Here could be an approach. Let $v \in \Kn(X)$ have positive rank, and let $\si_+, \si_0$ be stability conditions in the Gieseker chamber and on the vertical wall, respectively. The inclusion of stacks $\sM^{\si_+}(v) \subs \sM^{\si_0}(v)$ induces a map on $f: M^{\si_+}(v) \to M^{\si_0}(v)$ on good moduli spaces. Since we already know $M^{\si_0}(v)$ is projective, to show that $M^{\si_+}(v)$ is projective, it should be enough to find a line bundle on $M^{\si_+}(v)$ that is ample on the fibers of $f$. This line should be none other than $\sL_{\si_+}$.
-
-%So what are the fibers? Hopefully some projective spaces parameterizing iterated extensions. For example, consider a point $[F_1 \oplus F_2] \in M^{\si_0}(v)$, where $F_1$ and $F_2$ are $\mu$-stable vector bundles of equal slope but $p(F_2) > p(F_2)$, where $p$ denotes some suitable twisted Hilbert polynomial. Now $f^{-1}([F_1 \oplus F_2])$ should parameterize sheaves $E$ that are extensions of $F_2$ by $F_1$.
-
-%Let $E = \Ext^1(F_2, F_1)$ and consider the projective space $S = \p(E)$ with projections $p: S \times X \to S$ and $q: S \times X \to X$. By \cite[{Example 2.1.12}]{HL}, there is a universal extension
-%\[ 0 \to p^* \Oh_S(1) \otimes q^* F_1 \to \sE \to p^* F_2 \to 0. \]
-%The sheaf $\sE$ is a family of $\si_+$-stable objects, and also induces a Donaldson morphism $\la_\sE: K(X) \to \Pic S$. Let $u_+ \in K(X)$ be the class giving the Bayer-Macri line bundle on $\sM^{\si_+}(v)$. Now
-%\begin{align*}
-%    \la_\sE(u_+) & = \la_{q^* F_2}(u_+) \otimes \la_{p^*\Oh_S(1) \otimes q^* F_1}(u_+) \\
-%    & = \la_{q^* F_2}(u_+) \otimes \la_{q^* F_1}(u_+) \otimes \Oh_S(1)^{\chi(F_1 \otimes u_+)} \\
-%    & = \Oh_S(1)^{\chi(F_1 \otimes u_+)}
-%\end{align*}
-%because for any locally free sheaves $F$ and $G$ on $X$,
-%\[ \la_{q^*F}(G) \otimes \la_{q^*F}(G) = \la_{q^*F}(G) = \det R p_* q^*(F \otimes G) = \det \Oh_S \otimes R \Ga(X, F \otimes G) = \Oh_S. \]
-%But $u_+$ by definition satisfies the equation
-%\[ \chi(F_1 \otimes u_+) = \im\left(-\frac{Z_{\si_+}(F_1)}{Z_{\si_+(v)}}\right). \]
-%Since $\arg Z_{\si_+}(F_1) < \arg Z_{\si_+}(v)$, we have $\chi(F_1 \otimes u_+) > 0$, so the line bundle $\la_\sE(u_+)$ is ample on $S$.
-
-
-
-%\begin{lem}\label{constantmapcurvetoAS}
-%    If $C \to X$ is a map of algebraic spaces with (some conditions) such that for every map $\Spec \C \to C$, the induced map $\Spec \C \to X$ represents the same point in $|X|$, then $C \to X$ factors through $\Spec \C$.
-%\end{lem}
-%\begin{proof}
-%    {\color{red} Do it.}
-%\end{proof}
-
 
 
 \bibliographystyle{alpha}
